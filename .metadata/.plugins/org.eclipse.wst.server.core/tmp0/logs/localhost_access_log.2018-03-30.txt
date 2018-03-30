@@ -40,3 +40,7 @@
 0:0:0:0:0:0:0:1 - - [30/Mar/2018:17:15:54 +0900] "GET /WebProj2/ HTTP/1.1" 200 2156
 0:0:0:0:0:0:0:1 - - [30/Mar/2018:17:15:56 +0900] "POST /WebProj2/InquiryAction.action HTTP/1.1" 200 997
 0:0:0:0:0:0:0:1 - - [30/Mar/2018:17:15:59 +0900] "POST /WebProj2/InquiryConpleteAction HTTP/1.1" 200 3459
+127.0.0.1 - - [30/Mar/2018:17:23:30 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:17:23:32 +0900] "GET /WebProj2/ HTTP/1.1" 200 2156
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:17:23:35 +0900] "POST /WebProj2/InquiryAction.action HTTP/1.1" 200 1014
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:17:23:39 +0900] "POST /WebProj2/InquiryCompleteAction.action HTTP/1.1" 200 315

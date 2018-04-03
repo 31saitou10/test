@@ -11,13 +11,21 @@
       <s:submit value="HelloStruts"/>
    </s:form>
 
-   <form action="WelcomeAction">
+   <s:form action="WelcomeAction">
       <s:submit value="Welcome"/>
-   </form>
+   </s:form>
 
-   <action name="WelcomeAction" class="com.internousdev.webproj3.action.WelcomeAction" method="execute">
-   <result name="success">welcome.jsp</result>
-   </action>
+   <s:form action="InquiryAction">
+      <s:submit value="問い合わせ"/>
+   </s:form>
+
+   <h3>新規ユーザー登録</h3>
+   GET通信
+   <s:form method="get" action="TestAction">
+   <s:textfield name="username"/>
+   <s:password name="password"/>
+   <s:submit value="送信"/>
+   </s:form>
 
 </body>
 </html>

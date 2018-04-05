@@ -24,7 +24,7 @@ public class LoginAction extends ActionSupport {
 				this.password.equals(LoginDTOList.get(0).getPassword())){
 			ret= SUCCESS;
 		}else{
-			ret= ERROR;
+			ret=ERROR;
 		}
 		return ret;
 	}

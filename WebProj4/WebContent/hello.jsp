@@ -14,7 +14,7 @@
 <table>
  <tbody>
  <tr>
-   <th>USERID</tr>
+   <th>USERID</th>
    <th>USERNAME</th>
    <th>PASSWORD</th>
    <th>RESULT</th>

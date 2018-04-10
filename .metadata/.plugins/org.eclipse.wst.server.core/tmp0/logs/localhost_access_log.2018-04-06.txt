@@ -42,3 +42,10 @@
 0:0:0:0:0:0:0:1 - - [06/Apr/2018:14:08:59 +0900] "GET /WebProj5/ HTTP/1.1" 200 2136
 0:0:0:0:0:0:0:1 - - [06/Apr/2018:14:09:12 +0900] "POST /WebProj5/InquiryAction.action;jsessionid=29686F9A80793635E778659B81B90B3E HTTP/1.1" 200 957
 0:0:0:0:0:0:0:1 - - [06/Apr/2018:14:09:15 +0900] "POST /WebProj5/InquiryCompleteAction HTTP/1.1" 200 3459
+127.0.0.1 - - [06/Apr/2018:14:27:46 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [06/Apr/2018:14:27:48 +0900] "GET /WebProj5/ HTTP/1.1" 200 1960
+0:0:0:0:0:0:0:1 - - [06/Apr/2018:14:27:50 +0900] "POST /WebProj5/InquiryAction.action HTTP/1.1" 200 974
+0:0:0:0:0:0:0:1 - - [06/Apr/2018:14:27:54 +0900] "POST /WebProj5/InquiryCompleteAction.action HTTP/1.1" 200 428
+0:0:0:0:0:0:0:1 - - [06/Apr/2018:14:29:37 +0900] "GET /WebProj5/WelcomeAction HTTP/1.1" 200 849
+0:0:0:0:0:0:0:1 - - [06/Apr/2018:14:29:42 +0900] "GET /WebProj5/WelcomeAction HTTP/1.1" 200 849
+0:0:0:0:0:0:0:1 - - [06/Apr/2018:14:29:49 +0900] "POST /WebProj5/LoginAction.action HTTP/1.1" 200 401

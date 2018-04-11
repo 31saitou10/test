@@ -36,17 +36,17 @@
                       <result name="success">userCreateComplete.jsp</result>
                  </action>
 
-                 <!-- BuyItemAction
+                 <!-- BuyItemAction -->
                  <action name="BuyItemAction" class="com.internousdev.template.action.BuyItemAction" method="execute">
                       <result name="success">buyItemConfirm.jsp</result>
                       <result name="error">buyItem.jsp</result>
-                 </action> -->
+                 </action>
 
-                 <!-- BuyItemConfirmAction
+                 <!-- BuyItemConfirmAction -->
                  <action name="BuyItemConfirmAction" class="com.internousdev.template.action.BuyItemConfirmAction" method="execute">
                       <result name="success">buyItemComplete.jsp</result>
                       <result name="back">buyItem.jsp</result>
-                 </action> -->
+                 </action>
 
                  <!-- BuyItemCompleteAction
                  <action name="BuyItemCompleteAction" class="com.internousdev.template.action.BuyItemCompleteAction" method="execute">

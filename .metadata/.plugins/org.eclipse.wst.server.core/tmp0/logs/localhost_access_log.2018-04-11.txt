@@ -88,3 +88,9 @@
 0:0:0:0:0:0:0:1 - - [11/Apr/2018:17:37:54 +0900] "POST /template/LoginAction.action HTTP/1.1" 200 3987
 0:0:0:0:0:0:0:1 - - [11/Apr/2018:17:37:55 +0900] "POST /template/BuyItemAction.action HTTP/1.1" 200 2435
 0:0:0:0:0:0:0:1 - - [11/Apr/2018:17:37:56 +0900] "POST /template/BuyItemConfirmAction HTTP/1.1" 200 3457
+127.0.0.1 - - [11/Apr/2018:17:39:11 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [11/Apr/2018:17:39:13 +0900] "GET /template/ HTTP/1.1" 200 1567
+0:0:0:0:0:0:0:1 - - [11/Apr/2018:17:39:14 +0900] "POST /template/HomeAction.action HTTP/1.1" 200 2264
+0:0:0:0:0:0:0:1 - - [11/Apr/2018:17:39:21 +0900] "POST /template/LoginAction.action HTTP/1.1" 200 3987
+0:0:0:0:0:0:0:1 - - [11/Apr/2018:17:39:23 +0900] "POST /template/BuyItemAction.action HTTP/1.1" 200 2452
+0:0:0:0:0:0:0:1 - - [11/Apr/2018:17:39:25 +0900] "POST /template/BuyItemConfirmAction.action HTTP/1.1" 200 1530

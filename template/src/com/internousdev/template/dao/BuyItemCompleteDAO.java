@@ -23,6 +23,15 @@ public class BuyItemCompleteDAO {
 			preparedStatement.setString(5, pay);
 			preparedStatement.setString(6, dateUtil.getDate());
 
+			////////////テストコード
+			System.out.println(item_transaction_id);
+			System.out.println(total_price);
+			System.out.println(total_count);
+			System.out.println(user_master_id);
+			System.out.println(pay);
+			System.out.println(dateUtil.getDate());
+			//////////////////////////
+
 			preparedStatement.execute();
 			} catch(Exception e) {
 				e.printStackTrace();

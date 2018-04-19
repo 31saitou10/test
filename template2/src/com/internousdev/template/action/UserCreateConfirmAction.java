@@ -1,5 +1,4 @@
 package com.internousdev.template.action;
-
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -14,47 +13,57 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public Map<String,Object> session;
 	private String errorMassage;
 
-	public String execute(){
-		String result = SUCCESS;
+	public String execute() {
 
-	if(!(loginUserId.equals(""))
-		&&!(loginPassword.equals(""))
-		&&!(userName.equals(""))){
-		    session.put("loginUserId", loginUserId);
-		    session.put("lognPassword", loginPassword);
-		    session.put("userName", userName);
-	}else{
-		setErrorMassage("未入力の項目があります。");
-		result = ERROR;
+		String result = SUCCESS;
+		if(!(loginUserId.equals(""))
+			&&!(loginPassword.equals(""))
+			&&!(userName.equals(""))) {
+			session.put("loginUserId", loginUserId);
+			session.put("loginPassword", loginPassword);
+			session.put("userName", userName);
+		} else {
+			setErrorMassage("未入力の項目があります。");
+			result = ERROR;
+		}
+		return result;
 	}
-	return result;
-}
-	public String getLoginUserId(){
+
+	public String getLoginUserId() {
 		return loginUserId;
 	}
-	public void setLoginUserId(String loginUserId){
+
+	public void setLoginUserId(String loginUserId) {
 		this.loginUserId = loginUserId;
 	}
-	public String getLoginPassword(){
+
+	public String getLoginPassword() {
 		return loginPassword;
 	}
-	public void setLoginPassword(String loginPassword){
+
+	public void setLoginPassword(String loginPassword) {
 		this.loginPassword = loginPassword;
 	}
-	public String getUserName(){
+
+	public String getUserName() {
 		return userName;
 	}
-	public void setUserName(String userName){
+
+	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 	@Override
-	public void setSession(Map<String,Object> session){
+	public void setSession(Map<String,Object> session) {
 		this.session = session;
 	}
-	public String getErrorMassage(){
+
+	public String getErrorMassage() {
 		return errorMassage;
 	}
-	public void setErrorMassage(String errorMassage){
+
+	public void setErrorMassage(String errorMassage) {
 		this.errorMassage = errorMassage;
 	}
+
 }

@@ -1,7 +1,0 @@
-package com.internousdev.template.action;
-
-import java.util.Map;
-
-public class LoginAction {
-
-}

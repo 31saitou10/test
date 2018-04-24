@@ -7,7 +7,7 @@ public class MyPageDTO {
 	public String payment;
 	public String userName;
 	public String id;
-	public String insart_date;
+	public String insert_date;
 
 	public String getItemName() {
 		return itemName;

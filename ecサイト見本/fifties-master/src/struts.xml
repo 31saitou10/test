@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 開発者モード(デバッグしたい時にはコメント外してください。ユーザーのエラーページが無効にできます) -->
+<!-- 	<constant name="struts.devMode" value="true" /> -->
+	<package name="com.internousdev.fifties.action" extends="struts-default">
+
+		<action name="GoHomeAction" class="com.internousdev.fifties.action.GoHomeAction"
+			method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+		<!-- ログイン認証と注文履歴 板東 -->
+		<action name="StartAction" class="com.internousdev.fifties.action.StartAction"
+			method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+		<action name="GoLoginAction" class="com.internousdev.fifties.action.GoLoginAction"
+			method="execute">
+			<result name="success">login.jsp</result>
+		</action>
+		<action name="LoginAction" class="com.internousdev.fifties.action.LoginAction"
+			method="execute">
+				<!-- デフォルトのinterceptor -->
+			<interceptor-ref name="defaultStack" />
+				<!-- tokenのinterceptor -->
+			<interceptor-ref name="token"/>
+			<result name="success">home.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="master">master.jsp</result>
+			<result name="errorPage">errorPage.jsp</result>
+			<result name="invalid.token">token.jsp</result>
+		</action>
+		<action name="LogoutAction" class="com.internousdev.fifties.action.LogoutAction"
+			method="execute">
+			<result name="success" type="chain">StartAction</result>
+		</action>
+		<action name="PurchaseHistoryAction"
+			class="com.internousdev.fifties.action.PurchaseHistoryAction" method="execute">
+			<result name="success">purchaseHistory.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<!-- ここまで板東 -->
+
+		<!-- 新規ユーザー登録 木村 -->
+		<action name="UserCreateAction" class="com.internousdev.fifties.action.UserCreateAction"
+			method="execute">
+			<result name="success">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateConfirmAction"
+			class="com.internousdev.fifties.action.UserCreateConfirmAction"
+			method="execute">
+			<result name="success">userCreateConfirm.jsp</result>
+			<result name="error">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateBackAction"
+			class="com.internousdev.fifties.action.UserCreateBackAction" method="execute">
+			<result name="success">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateCompleteAction"
+			class="com.internousdev.fifties.action.UserCreateCompleteAction"
+			method="execute">
+			<result name="success">userCreateComplete.jsp</result>
+			<result name="error">userCreate.jsp</result>
+		</action>
+		<!-- ここまで木村 -->
+
+		<!-- カート機能 ここから山本 -->
+		<action name="CartAction" class="com.internousdev.fifties.action.CartAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+		</action>
+		<action name="CartInsertAction" class="com.internousdev.fifties.action.CartInsertAction"
+			method="execute">
+				<!-- デフォルトのinterceptor -->
+			<interceptor-ref name="defaultStack" />
+				<!-- tokenのinterceptor -->
+			<interceptor-ref name="token"/>
+			<result name="success">cart.jsp</result>
+			<result name="error">productDetails.jsp</result>
+			<result name="errorPage">errorPage.jsp</result>
+			<result name="invalid.token">token.jsp</result>
+		</action>
+		<!-- ここまで山本 -->
+
+		<!-- 決済機能 ここから妹尾 -->
+		<action name="BuyItemConfirmAction"
+			class="com.internousdev.fifties.action.BuyItemConfirmAction" method="execute">
+			<result name="success">buyItemConfirm.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="other">cart.jsp</result>
+			<result name="NoAddress">addressRegister.jsp</result>
+		</action>
+		<action name="BuyItemCompleteAction"
+			class="com.internousdev.fifties.action.BuyItemCompleteAction" method="execute">
+				<!-- デフォルトのinterceptor -->
+			<interceptor-ref name="defaultStack" />
+				<!-- tokenのinterceptor -->
+			<interceptor-ref name="token"/>
+			<result name="success">buyItemComplete.jsp</result>
+			<result name="error">buyItemERROR.jsp</result>
+			<result name="noStockERROR">noStockERROR.jsp</result>
+			<result name="other">cart.jsp</result>
+			<result name="invalid.token">token.jsp</result>
+		</action>
+		<!-- ここまで -->
+
+		<!-- マイページ機能 ここから森 -->
+		<action name="MyPageAction" class="com.internousdev.fifties.action.MyPageAction"
+			method="execute">
+			<result name="success">myPage.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<!-- ここまで -->
+
+		<!-- お問い合わせ ここから森 -->
+		<action name="InquiryAction" class="com.internousdev.fifties.action.InquiryAction"
+			method="execute">
+			<result name="success">inquiry.jsp</result>
+		</action>
+		<action name="InquiryConfirmAction"
+			class="com.internousdev.fifties.action.InquiryConfirmAction" method="execute">
+			<result name="success">inquiryConfirm.jsp</result>
+			<result name="error">inquiry.jsp</result>
+		</action>
+		<action name="InquiryCompleteAction"
+			class="com.internousdev.fifties.action.InquiryCompleteAction" method="execute">
+			<result name="success">inquiryComplete.jsp</result>
+			<result name="error">inquiry.jsp</result>
+		</action>
+		<action name="InquiryBackAction"
+			class="com.internousdev.fifties.action.InquiryBackAction" method="execute">
+			<result name="success">inquiry.jsp</result>
+		</action>
+		<!-- ここまで -->
+
+		<!-- ここから 戌亥&中嶋 -->
+		<action name="ProductSearchAction"
+			class="com.internousdev.fifties.action.ProductSearchAction" method="execute">
+			<result name="success">productList.jsp</result>
+		</action>
+		<action name="ProductDetailsAction"
+			class="com.internousdev.fifties.action.ProductDetailsAction" method="execute">
+			<result name="success">productDetails.jsp</result>
+			<result name="error">productDetails.jsp</result>
+		</action>
+		<!-- ここまで -->
+
+
+		<!-- ここから 藤澤 -->
+		<action name="MasterAction" class="com.internousdev.fifties.action.MasterAction"
+			method="execute">
+			<result name="success">master.jsp</result>
+			<result name="error">master.jsp</result>
+			<result name="masterChange">masterChange.jsp</result>
+			<result name="token">token.jsp</result>
+		</action>
+
+		<action name="ProductChangeConfirmAction"
+			class="com.internousdev.fifties.action.ProductChangeConfirmAction" method="execute">
+			<result name="success">masterChangeConfirm.jsp</result>
+			<result name="error">masterChange.jsp</result>
+		</action>
+		<action name="ProductChangeCompleteAction"
+			class="com.internousdev.fifties.action.ProductChangeCompleteAction" method="execute">
+			<result name="success">masterChangeComplete.jsp</result>
+			<result name="error">masterChangeConfirm.jsp</result>
+		</action>
+
+		<action name="MasterAddConfirmAction"
+			class="com.internousdev.fifties.action.MasterAddConfirmAction"
+			method="execute">
+			<result name="success">masterAddConfirm.jsp</result>
+			<result name="error">master.jsp</result>
+			<result name="token">token.jsp</result>
+		</action>
+		<action name="MasterAddCompleteAction"
+			class="com.internousdev.fifties.action.MasterAddCompleteAction"
+			method="execute">
+			<result name="success">masterAddComplete.jsp</result>
+		</action>
+		<action name="MasterInquiryAction"
+			class="com.internousdev.fifties.action.MasterInquiryAction" method="execute">
+			<result name="success">masterInquiry.jsp</result>
+				<result name="error">token</result>
+		</action>
+
+		<action name="MasterInquiryCompleteAction"
+			class="com.internousdev.fifties.action.MasterInquiryCompleteAction"
+			method="execute">
+			<result name="success">masterInquiryComplete.jsp</result>
+			<result name="error">masterInquiry.jsp</result>
+		</action>
+
+		<action name="GoMasterAction" class="com.internousdev.fifties.action.GoMasterAction"
+			method="execute">
+			<result name="success">master.jsp</result>
+			<result name="error">token</result>
+		</action>
+
+		<action name="MasterBackChangeAction"
+			class="com.internousdev.fifties.action.MasterBackChangeAction" method="execute">
+			<result name="success">masterChange.jsp</result>
+		</action>
+		<action name="MasterBackAction"
+			class="com.internousdev.fifties.action.MasterBackAction" method="execute">
+			<result name="success">master.jsp</result>
+		</action>
+
+		<!-- ここまで -->
+
+		<!--パスワード再設定 木村 -->
+		<action name="ChangePasswordAction"
+			class="com.internousdev.fifties.action.ChangePasswordAction" method="execute">
+			<result name="success">changePassword.jsp</result>
+		</action>
+
+		<action name="ChangePasswordConfirmAction"
+			class="com.internousdev.fifties.action.ChangePasswordConfirmAction"
+			method="execute">
+			<result name="success">changePasswordConfirm.jsp</result>
+			<result name="error">changePassword.jsp</result>
+		</action>
+
+		<action name="ChangePasswordCompleteAction"
+			class="com.internousdev.fifties.action.ChangePasswordCompleteAction"
+			method="execute">
+			<result name="success">changePasswordComplete.jsp</result>
+			<result name="error">changePasswordConfirm.jsp</result>
+		</action>
+
+		<!-- ここまで -->
+
+		<!--宛先情報登録 林 -->
+		<action name="AddressRegisterAction"
+			class="com.internousdev.fifties.action.AddressRegisterAction" method="execute">
+			<result name="success">addressRegister.jsp</result>
+		</action>
+
+		<action name="AddressRegiConfirmAction"
+			class="com.internousdev.fifties.action.AddressRegiConfirmAction"
+			method="execute">
+			<result name="success">addressRegiConfirm.jsp</result>
+			<result name="error">addressRegister.jsp</result>
+			<result name="login">addressRegister.jsp</result>
+		</action>
+
+
+		<action name="AddressRegiCompleteAction"
+			class="com.internousdev.fifties.action.AddressRegiCompleteAction"
+			method="execute">
+			<result name="success">addressRegiComplete.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="AddressDeleteAction"
+			class="com.internousdev.fifties.action.AddressDeleteAction" method="execute">
+			<result name="success">buyItemConfirm.jsp</result>
+			<result name="address">addressRegister.jsp</result>
+			<result name="error">buyItemConfirm.jsp</result>
+		</action>
+		<!-- ここまで -->
+
+		<!-- お気に入り 中嶋 -->
+		<action name="FavoriteAction" class="com.internousdev.fifties.action.FavoriteAction"
+			method="execute">
+			<result name="success">favorite.jsp</result>
+			<result name="login">login.jsp</result>
+		</action>
+		<!-- ここまで -->
+
+		<!--ユーザー情報変更 林 -->
+		<action name="UserUpdateAction" class="com.internousdev.fifties.action.UserUpdateAction"
+			method="execute">
+			<result name="success">userUpdate.jsp</result>
+			<result name="error">myPage.jsp</result>
+		</action>
+
+		<action name="UserUpdateConfirmAction"
+			class="com.internousdev.fifties.action.UserUpdateConfirmAction"
+			method="execute">
+			<result name="success">userUpdateConfirm.jsp</result>
+			<result name="error">userUpdate.jsp</result>
+		</action>
+
+		<action name="UserUpdateCompleteAction"
+			class="com.internousdev.fifties.action.UserUpdateCompleteAction"
+			method="execute">
+			<result name="success">userUpdateComplete.jsp</result>
+			<result name="error">myPage.jsp</result>
+		</action>
+		<!-- ここまで -->
+
+		<!-- レビュー -->
+		<action name="ReviewMyListAction"
+			class="com.internousdev.fifties.action.ReviewMyListAction" method="execute">
+			<result name="login">login.jsp</result>
+			<result name="success">reviewMyList.jsp</result>
+		</action>
+
+		<action name="ReviewListAction" class="com.internousdev.fifties.action.ReviewListAction"
+			method="execute">
+			<result name="success">reviewProductList.jsp</result>
+		</action>
+
+		<action name="ReviewDeleteAction"
+			class="com.internousdev.fifties.action.ReviewDeleteAction" method="execute">
+			<!-- <result name="success"></result> -->
+			<result name="error">reviewMyList.jsp</result>
+		</action>
+
+		<action name="CreateReviewAction"
+			class="com.internousdev.fifties.action.CreateReviewAction" method="execute">
+			<result name="login">login.jsp</result>
+			<result name="success">reviewCreate.jsp</result>
+			<result name="error">reviewCreate.jsp</result>
+		</action>
+
+		<action name="CreateReviewConfirmAction"
+			class="com.internousdev.fifties.action.CreateReviewConfirmAction"
+			method="execute">
+			<result name="success">reviewConfirm.jsp</result>
+			<result name="error">reviewCreate.jsp</result>
+<!-- 			<result name="login">login.jsp</result> -->
+		</action>
+
+		<action name="CreateReviewCompleteAction"
+			class="com.internousdev.fifties.action.CreateReviewCompleteAction"
+			method="execute">
+			<result name="error">reviewConfirm.jsp</result>
+			<result name="success">reviewComplete.jsp</result>
+<!-- 			<result name="login">login.jsp</result> -->
+		</action>
+
+
+		<!-- ここまで -->
+	</package>
+</struts>
+
+
+
+
+

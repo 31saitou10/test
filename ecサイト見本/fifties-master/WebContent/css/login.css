@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+
+.main {
+	width: 60%;
+	height: 100%;
+	padding-top: 145px;
+	background: rgba(255,255,255,0.7);;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+.form {
+	width: 50%;
+	min-width: 200px;
+	margin: 0 auto;
+	padding-bottom: 60px;
+	text-align: center;
+}
+
+.form-heading {
+	height: 140px;
+	width: 100%;
+	text-align: center;
+	color: white;
+	border: 1px solid gray;
+	border-radius: 20px 20px 0 0;
+	background: rgba(0,0,0,0.9);
+}
+
+
+p, h1 {
+	margin: 0;
+	padding: 0;
+}
+
+.form-heading h1 {
+	margin-top: 20px;
+	line-height: 75px;
+	font-family: Impact, arial black, sans-serif;
+	font-size: 75px;
+}
+
+.form-heading p {
+	line-height: 20px;
+	font-size: 20px;
+}
+
+
+.form-main{
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-radius: 0 0 20px 20px;
+	background: rgba(255,255,255,0.7);
+}
+
+.form-parts{
+	width: 60%;
+	height: 20px;
+	background: rgba(255,255,255,0.5);
+	color: black;
+	border: 3px solid black;
+	border-radius: 5px;
+	font-size: 15px;
+}
+
+.login-id {
+	margin-right: 5px;
+}
+
+
+.checkbox {
+	margin-top: 2%;
+	margin-left: 38%;
+	font-size: 14px;
+}
+
+
+.link {
+	padding-top: 30px;
+	margin-bottom: 65px;
+	font-size: 15px;
+	text-align: center;
+}
+
+
+.link p a {
+	color:black;
+	text-decoration: underline;
+}
+
+.link p a:visited {
+	color: black;
+}
+.link p a:hover {
+	color: gray;
+}
+
+
+.error {
+	color: red;
+}
+
+.button-layout{
+	width: 100px;
+}

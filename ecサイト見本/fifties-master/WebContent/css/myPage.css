@@ -1,0 +1,306 @@
+@CHARSET "UTF-8";
+
+/*-------------------------------------------------------------------
+	共通
+-------------------------------------------------------------------*/
+
+
+.border{		/* 線が要素の内側にくるよう指定 */
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#main{
+	width: 60%;
+	height: 1065px;
+    padding-top: 90px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: rgba(255,255,255,0.5);
+}
+
+a{
+	text-decoration: none;
+}
+
+.cleaer{
+	clear:both;
+}
+
+.button-layout{
+	margin:10px;
+}
+
+.title{
+	height: 155px;
+}
+
+.titlefont{
+	padding-top: 10px;
+}
+
+p.title{
+	font-size: 20px;
+	margin: -5px 0 0 0;
+}
+
+
+#contents{
+	width:100%;
+	height:910px;
+	border: 2px solid black;
+	background-color: rgba(101,200,208,0.3);
+}
+
+#left{
+	float: left;
+	font-size: 20px;
+	width: 20%;
+	height: 100%;
+	border-right: 2px solid black;
+}
+
+.list{
+	color: white;
+	position: relative;
+	height: 100px;
+	width: 100%;
+	line-height: 100px;
+	border-bottom: 2px solid black;
+	margin: 0;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all  0.3s ease;
+	}
+
+.list a{
+	color: white;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height:100%;
+	width: 100%;
+}
+
+
+.list._1{
+	background-color: rgba(230,25,230,0.5);
+}
+
+.list._2{
+	background-color: rgba(189,115,255,0.5);
+
+}
+.list._3{
+	background-color: rgba(143,174,231,0.5);
+}
+
+.list._4{
+	background-color: rgba(101,200,208,0.5);
+}
+
+.list._5{
+	background-color: rgba(153,255,204,0.5);
+}
+
+.list:hover {
+	background-color: rgba(0,0,0,0.5);
+}
+
+
+#right{
+	float:right;
+	width: 80%;
+}
+
+#contentstitle{
+    background: black;
+    color: white;
+    height: 150px;
+}
+
+#rightcontents{
+	width: 90%;
+	margin: 0 auto;
+	padding: 30px 0 0 0;
+}
+
+ul {
+	list-style-type: none;
+	text-align:center;
+	padding: 0;
+
+}
+
+ul li{
+		display:inline-block;
+		padding:0 10px;
+}
+
+
+/*-------------------------------------------------------------------
+	myPage.jsp
+-------------------------------------------------------------------*/
+
+
+table{
+	width: 80%;
+    margin: 0 auto;
+    padding:30px 0;
+    line-height: 40px;
+    background-color: rgba(255,255,255,0.5);
+	border-radius: 10px;
+	border: 1px solid gray;
+	border-radius: 10px;
+}
+
+td{
+    text-align: left;
+}
+
+
+/*-------------------------------------------------------------------
+	userUpdate.jsp
+-------------------------------------------------------------------*/
+
+
+#userinfo{
+	width: 80%;
+    margin: 0 auto;
+    padding:30px 0;
+    background-color: rgba(255,255,255,0.5);
+	border: 1px solid gray;
+	border-radius: 10px;
+}
+
+#userinfo p{
+	margin:0 0 20px 0;
+}
+
+.error-color{
+	color: red;
+}
+
+.form-text{
+	margin-top: 10px;
+}
+
+
+/*-------------------------------------------------------------------
+	履歴・お気に入り共通
+-------------------------------------------------------------------*/
+
+
+.spacing{
+	letter-spacing: -2px;
+}
+
+.ph#main{
+	height: 1470px;
+}
+
+.ph#contents{
+	height: 1320px;
+}
+
+.fv#main{
+	height: 1290px;
+}
+
+.fv#contents{
+	height: 1140px;
+}
+
+.rightcon{
+	width: 100%;
+	padding: 30px 0 0 0;
+}
+
+.message p{
+	margin: 0 0 10px 0;
+}
+
+.mt{
+	margin-top: 10px;
+}
+
+#boxlist{
+	width:100%;
+	overflow: hidden;
+}
+
+.box{
+	float: left;
+	position: relative;
+	width: 37%;
+	margin: 10px auto 20px 6%;
+	padding:2%;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 8px;
+	text-align: left;
+}
+
+.box a{
+	color: black;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.box a img{
+	clear: both;
+	width: 90%;
+	height: 190px;
+	margin: 0 5% 10px 5%;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.pname{
+	font-size: 23px;
+	font-weight: bold;
+}
+
+.kana{
+	font-size: 12px;
+	margin: -5px 0 10px 0;
+}
+
+.info{
+	font-size: 13px;
+}
+
+.review {
+	font-size: 15px;
+	text-decoration: underline;
+}
+
+.price{
+	font-size: 20px;
+	margin: 10px 0;
+}
+
+#page_move{
+	text-align: center;
+}
+
+.pm{
+	margin: 20px 15px 0 15px;
+}
+
+li.pm{
+	line-height: 40px;
+}
+
+.button1{
+   width: 200px;
+}
+
+/* #buttonBox{ */
+/* 	float: center; */
+/* } */

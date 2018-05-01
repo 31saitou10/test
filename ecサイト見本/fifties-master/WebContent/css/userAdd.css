@@ -1,0 +1,191 @@
+
+body{
+	height: auto;
+	}
+
+
+
+#main{
+	width:60%;
+	background:rgba(255,255,255,0.5);
+	margin:0 auto;
+	text-align:center;
+	height:auto;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	margin-bottom:0px;
+}
+
+#form{
+	width: 65%;
+	height: auto;
+	margin: auto;
+	margin-top: 110px;
+	margin-bottom: 10px;
+	padding-bottom: 0;
+	text-align: center;
+	background-color: rgba(255,255,255,0.7);
+	border: 1px solid gray;
+	min-width: 200px;
+	border-radius: 10px;
+}
+
+.title{
+
+	border-radius: 10px 10px 0 0;
+	background-color: black;
+	color: white;
+}
+
+.titlefont{
+	height: 155px;
+	padding-top: 10px;
+}
+
+.title p{
+	font-size: 20px;
+	margin: -5px 0 0 0;
+}
+
+
+
+.contents{
+	text-align: left;
+	margin: 0 auto;
+	width: 80%;
+	padding-top: 10px;
+}
+
+input{
+	border-radius: 5px;
+	font-size: 17px;
+	border: 1px solid gray;
+}
+
+textarea{
+	border-radius: 5px;
+	font-size: 17px;
+	border: 1px solid gray;
+}
+
+select{
+	border-radius: 5px;
+	font-size: 15px;
+	border: 1px solid gray;
+}
+
+.error-color{
+	color: red;
+	padding-top: 20px;
+}
+
+.form-text{
+	font-size: 20px;
+	padding-top: 18px;
+	font-weight: 500;
+}
+
+
+#button{
+     margin:0 auto;
+     clear:both;
+     text-align: center;
+     height:6%;
+      position: relative;
+    left: 50%;
+    width: 1000px;
+    margin-left: -525px;
+}
+
+#button ul {
+	list-style-type: none;
+	text-align:center;
+}
+
+#button ul li{
+		display:inline-block;
+		padding:0 10px;
+}
+
+#button a {
+	background-color: #ff8040;
+	color: #fff;
+	text-decoration: none;
+}
+
+.button-center{
+	text-align:center
+}
+
+.long{
+	width: 150px;
+}
+
+.button-layout{
+	margin: 10px auto;
+}
+
+.bold{
+	line-height: 30px;
+	font-weight: bold;
+	margin:0;
+}
+
+/*-------------------------------------------------------------------
+	inquiry
+-------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------
+	userCreate
+-------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------
+	userCreateConfirm
+-------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------
+	passwordChange
+-------------------------------------------------------------------*/
+
+
+.passchange .titlefont{
+	height: 205px;
+	padding-top: 20px;
+}
+
+.passchange h1{
+	font-size: 75px;
+	line-height: 75px;
+}
+
+
+.passchange p{
+	margin-top: -15px;
+}
+
+/*-------------------------------------------------------------------
+	addressRegister
+-------------------------------------------------------------------*/
+
+
+.addressreg .titlefont{
+	height: 205px;
+	padding-top: 20px;
+}
+
+.addressreg h1{
+	font-size: 75px;
+	line-height: 75px;
+}
+
+.addressreg p{
+	margin-top: -15px;
+}
+
+
+/*-------------------------------------------------------------------
+	inquiry
+-------------------------------------------------------------------*/
+

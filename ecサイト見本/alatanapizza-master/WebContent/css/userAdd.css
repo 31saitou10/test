@@ -1,0 +1,196 @@
+@CHARSET "UTF-8";
+
+/*-------------------------------------------------------------------------
+	共通
+-------------------------------------------------------------------------*/
+@media(max-width:1000px){
+#main{
+width:70%;
+background:rgba(0, 0, 0, 0.5);
+margin:0 auto;
+margin-top:80px;
+margin-bottom:100px;}
+table {width:70%;
+		margin:0 auto;
+	    text-align:left;
+	    }
+tr td{
+	    padding-right:60px;
+	    padding-left:20px;
+	    padding-top:5px;
+	    display:inline;
+	    word-wrap:break-word;
+	    }
+hr {text-align:left;
+	    border:none;
+	    border-top:dashed 1px #ccc;
+	    height:1px;
+	    color:#ffffff;
+	    margin:0 8 0 8;
+	    }
+th{
+text-align:left;
+}
+	    .form {
+	    background-color:rgba(200, 200, 200, 0.5);
+	    width:50%;
+	    height:30px;
+	    border-radius:5px;
+	    text-align:center;
+	    }
+	    .moji {
+	    text-align:center;
+	    font-size:12px;
+	    color:#FFCC33;
+	    }
+
+.moji2 {
+		text-align:center;
+	    font-size:12px;
+	    color:#FFCC33;
+	    }
+	    }
+ #main{
+width:70%;
+background:rgba(0, 0, 0, 0.5);
+margin:0 auto;
+margin-top:80px;
+margin-bottom:100px;}
+table {width:70%;
+		margin:0 auto;
+	    text-align:left;
+	    }
+tr td{
+	    padding-right:60px;
+	    padding-left:20px;
+	    padding-top:5px;
+	    word-wrap:break-word;
+	    }
+hr {text-align:left;
+	    border:none;
+	    border-top:dashed 1px #ccc;
+	    height:1px;
+	    color:#ffffff;
+	    margin:0 8 0 8;
+	    }
+	    .form {
+	    background-color:rgba(200, 200, 200, 0.5);
+	    width:70%;
+	    height:30px;
+	    border-radius:5px;
+	    text-align:left;
+	    }
+	    .moji {
+	    text-align:center;
+	    font-size:12px;
+	    color:#FFCC33;
+	    }
+
+.moji2 {
+		text-align:center;
+	    font-size:12px;
+	    color:#FFCC33;
+	    }
+
+
+::-webkit-input-placeholder {
+		color:#000000;
+		}
+
+::-moz-placeholder {
+		color:#000000;
+		opacity: 1;
+		}
+
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+		color:#000000;
+		}
+h3{
+border-left:10px solid red;
+}
+
+
+/*-------------------------------------------------------------------------
+	パスワード再設定
+-------------------------------------------------------------------------*/
+.error{
+color:red;
+text-align:center;
+font-weight:900;
+ font-size: 12px;
+}
+
+.image1{
+	padding-top:8px;
+}
+.image2 {
+
+	    text-align:right;
+	    padding-left:10px;
+}
+.iconpass{
+	text-align:center;
+	padding-top:10px;
+}
+.iconpass:hover{
+		opacity:0.8;
+		}
+		.moji3{
+		text-align:center;
+	    font-size:20px;
+	    color:#FFCC33;
+		}
+h2{
+	text-align:center;
+	    font-size:15px;
+	    color:#FFCC33;
+}
+.iconComplete{
+text-align:center;
+position:relative;
+right:10px;
+}
+
+
+/*-------------------------------------------------------------------------
+	宛先
+-------------------------------------------------------------------------*/
+
+
+
+
+
+/*-------------------------------------------------------------------------
+	ログイン
+-------------------------------------------------------------------------*/
+
+
+
+
+
+/*-------------------------------------------------------------------------
+	新規新規
+-------------------------------------------------------------------------*/
+
+
+.icon {
+		text-align:left;
+		}
+
+.icon2 {
+		float:right;
+		text-align:right;
+		}
+
+.icon2:hover{
+		opacity:0.8;
+		}
+
+.errmoji {
+		text-align:center;
+	    font-size:15px;
+	    color:#ff0000;
+	    font-weight:bold;
+	    }
+

@@ -1,0 +1,181 @@
+
+html{
+	height: auto;
+}
+
+body{
+	height: auto;
+	min-height: 100%;
+}
+
+#main{
+	width:60%;
+	height:auto;
+	margin: 0 auto;
+    padding-top: 90px;
+/*     padding-bottom:450px; */
+	text-align: center;
+	min-height: 100%;
+}
+
+#top {
+	padding:0;
+	width:100%;
+	height:145px;
+	background:rgba(255,255,255,0.5);
+}
+
+#title{
+	width: 500px;
+    height: 102px;
+    padding-top: 17px;
+    margin:auto;
+    text-align: center;
+}
+
+#title h1{
+	margin: 0;
+	padding: 0;
+	line-height:85px;
+	font-family: Impact, arial black, sans-serif;
+	font-size: 80px;
+}
+#title p{
+	margin: 0;
+	padding: 0;
+	line-height: 17px;
+	font-size: 17px;
+}
+
+.indexbox{
+	height:90px;
+	clear:both;
+	padding-left:30px;
+	background-color:black;
+}
+
+.indexbox h2{
+	color:white;
+	float:left;
+    border-bottom: 2px solid white;
+}
+
+.twocolunm{
+	min-height:100%;
+	height: auto;
+	clear:both;
+    text-align: center;
+    padding:30px 5px 5px 30px;
+	background:#dd99ff96;
+}
+
+
+.box{
+	clear:both;
+	width:93%;
+	min-height:100vh;
+	margin:0 auto;
+    text-align: center;
+    padding:5px;
+    background:rgba(255, 224, 0, 0.32);
+    border-radius: 20px;
+}
+
+
+.left{
+	float:left;
+	width:40%;
+	height:auto;
+	text-align: center;
+
+}
+
+table.cart{ border-bottom: 2px solid white;
+		margin-left:60px;
+		margin-top:30px;
+ 		margin-right: auto;
+ 		padding:10px 15px 0px 10px;
+ 		text-align:left;
+ 		}
+
+table.cart th{font-size:20px;
+
+}
+table.cart td{font-size:18px;
+}
+
+#paymentPrice{
+
+	font-size:25px;
+
+}
+
+.address{
+	float:right;
+	width:60%;
+	height:auto;
+	text-align: center;
+}
+
+h3{size:20px;
+
+}
+
+table.selectAddress{
+		margin-left:50px;
+		margin-top:15px;
+ 		margin-right: auto;
+ 		padding:10px 15px 20px 10px;
+ 		text-align:left;
+ 		border-bottom: 2px solid white;
+}
+table.selectAddress th{
+	font-size:18px;
+}
+table.selectAddress td{
+	font-size:15px;
+}
+
+#form-user-button{
+	width :20%;
+	padding-top:20px;
+	padding-left: 60px;
+	 float:left;
+
+
+}
+
+#button{
+     margin:0 auto;
+     clear:both;
+     text-align: center;
+     height:6%;
+      position: relative;
+    bottom:0px;
+    left: 50%;
+    width: 1000px;
+    margin-left: -500px;
+}
+
+#button ul {
+	list-style-type: none;
+	text-align:center;
+	margin: 0;
+}
+
+#button ul li{
+		display:inline-block;
+		padding:0 10px;
+}
+
+#button a {
+	background-color: #ff8040;
+	color: #fff;
+	text-decoration: none;
+}
+
+.button-layout{
+	text-align: center;
+	width:110px;
+}
+

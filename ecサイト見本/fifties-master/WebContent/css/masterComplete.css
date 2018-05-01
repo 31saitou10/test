@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+@charset "utf-8";
+
+html{
+	height: 100%;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+    margin: 0;
+	font-size: 17px;
+    color: black;
+	font-family: arial black, Helvetica, sans-serif;
+	background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8)  10%, rgba(255,255,255,0.5) 20%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.9)  90%, rgba(255,255,255,1) 100%), url(../images/top_01.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.main {
+
+	width: 60%;
+	height: 100%;
+	background: rgba(255,255,255,0.7);
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 10px;
+	margin-bottom: 0;
+}
+
+
+.form {
+
+	width: 80%;
+	height: auto;
+	margin: auto;
+	margin-top: 110px;
+	margin-bottom: 100px;
+	padding-bottom: 60px;
+	text-align: center;
+	background-color: rgba(255,255,255,0.7);
+	min-width: 200px;
+}
+
+.form-heading{
+	height: 80px;
+	width: 100%;
+	text-align: center;
+	color: black;
+}
+
+p, h1 {
+	margin: 0;
+	padding: 0;
+}
+
+.form-main{
+
+}

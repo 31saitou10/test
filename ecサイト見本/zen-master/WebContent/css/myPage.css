@@ -1,0 +1,143 @@
+/*--全ページ共通--*/
+@font-face{
+    font-family: 'hannari';
+    src: url("../webfont/hannari.otf") format('opentype');
+}/*プラグインした、はんなり明朝というwebフォントです。これはプラグインしただけなので
+使うところにfont-familyで指定して下さい。*/
+
+*{
+    margin:0;
+    padding:0;
+}
+
+html{
+	width:100%;
+	height:100%;
+}
+
+
+body{
+	width:100%;
+    height:100%;
+    margin:0 auto;
+    display:block;
+	position:relative;
+	background-image:url("../images/backhome.jpg");
+	background-attachment:fixed;
+	background-size:cover;
+    z-index:0;/*--背景画像の上に要素を置けるようにする処理--*/
+}
+
+
+.main{
+	width:100%;
+	height:80%;
+}
+
+.back{
+	position:absolute;
+    margin-top: 7%;
+    margin-left: 15%;
+    margin-right: auto;
+    width:70%;
+    height: 450px;
+    background-color:rgba(255,255,255,0.5);
+    z-index: -10;/*他の要素の上に背景色が来ないようにする*/
+}
+
+.container{
+    width: 55%;
+    margin: auto;
+    padding-top: 10%;
+}
+
+/*クリアフィックス（レイアウトが崩れなくするため）*/
+.clearfix:after;{
+content:"";
+display:block;
+clear:both;
+}
+
+/*見出し*/
+.heading{
+font-size: 120%;/*フォントの大きさ*/
+border: 1px solid #ccc;/*したのボーダー*/
+margin-bottom: 2.5%;
+padding:1% 10% ;
+text-align: center;
+}
+
+/*テーブル*/
+table{
+border-collapse: collapse;
+border-spacing: 0;
+border: 1px solid #cbcbcb;
+width: 100%;
+box-sizing: border-box;
+}
+
+table th{
+border-left:1px solid #cbcbcb;
+border-bottom:1px solid #cbcbcb;
+font-family:"Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+font-size: 13px;
+margin: 0;
+padding: 10px 32px;
+}
+
+table td{
+border-left:1px solid #cbcbcb;
+border-bottom:1px solid #cbcbcb;
+font-family:"Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+font-size: 13px;
+text-align:center;
+margin: 0;
+padding: 10px 13px;
+}
+
+
+table th{
+background-color:black;
+color:white;
+text-align:center;
+white-space:nowrap;
+}
+
+
+.container2{
+	float:left;
+	width: 70%;
+	margin:0 auto;
+	padding-top:3%;
+	padding-left:44%;
+}
+
+.container2 a{
+	text-decoration:none;
+	font-family:'hannari';
+	font-size:140%;
+	color:#000;
+}
+
+
+.historybtn{
+    font-family:'hannari';
+    font-size:80%;
+    padding:5px 10px;
+    color:white;
+    /*--ボタンの影指定--*/
+    border-style:none;
+    box-shadow:1px 1px 2px #000;
+    -moz-box-shadow:2px 2px 3px 1px #666;
+    -webkit-box-shadow:2px 2px 3px 1px #666;
+    /*--テキストの影指定--*/
+    text-shadow:1px 1px 2px #000;
+    background:-moz-linear-gradient(bottom,#000,#000 50%,#000);
+    background:-webkit-gradient(linear,left bottom,left top,from(#000),color-stop(0.5,#000),to(#000));
+    /*--角丸指定--*/
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+
+

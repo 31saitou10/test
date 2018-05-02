@@ -1,0 +1,129 @@
+@CHARSET "UTF-8";
+/*--全ページ共通--*/
+@font-face{
+    font-family: 'hannari';
+    src: url("./hannari/hannari.otf") format('opentype');
+}/*プラグインした、はんなり明朝というwebフォントです。*/
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+html{
+    height:100%;
+    width:100%;
+}
+
+body{
+    position:absolute;
+	height:100%;
+	width:100%;
+	margin:0 auto;
+	background-image:url("../images/backhome.jpg");
+	background-size:cover;
+	background-attachment:fixed;
+}
+
+
+#image-wrap{
+	position:relative;
+	background-image:url("zen.png");
+	background-size:cover;
+	width:1800px;
+	height:1300px;
+    z-index:-5;/*--背景画像の上に要素を置けるようにする処理--*/
+}
+
+.icon{
+    float:left;
+    margin:15px 0 0 4%;
+}
+
+#header-wrapper{
+	position:absolute;
+	left:200px;
+    top:30px;
+    width:1300px;
+	border-bottom:1px solid black;
+}
+
+
+/*--全画面共通--*/
+
+/*--購入完了ページ--*/
+
+main{
+	min-height:100%;
+	width:100%;
+	font-family:'hannari';
+	display: flex;
+	position:relative;
+	z-index:2;
+
+}
+
+.push {
+	height: 30px;
+}
+
+#haikei{
+   	margin: 0 auto;
+    margin-top:50px;
+    top:170px;
+    width:70%;
+    min-height:90%;
+    left:100px;
+    right:100px;
+    border-radius:2%;
+	font-family:'hannari';
+    background-color:rgba(255,255,255,0.5);
+    z-index: -10;/*他の要素の上に背景色が来ないようにする*/
+}
+
+
+
+.button{
+	font-family:'hannari';
+    font-size:110%;
+    padding:10px 20px;
+    color:white;
+    /*--ボタンの影指定--*/
+    border-style:none;
+    box-shadow:1px 1px 2px #000;
+    -moz-box-shadow:2px 2px 3px 1px #666;
+    -webkit-box-shadow:2px 2px 3px 1px #666;
+    /*--テキストの影指定--*/
+    text-shadow:1px 1px 2px #000;
+    background:-moz-linear-gradient(bottom,#000,#000 50%,#000);
+    background:-webkit-gradient(linear,left bottom,left top,from(#000),color-stop(0.5,#000),to(#000));
+    /*--角丸指定--*/
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+
+.button_wrapper{
+   text-align:center;
+   padding-bottom:15px;
+   padding-top:15px;
+}
+
+
+p{
+	text-align: center;
+	padding-top: 30px;
+	font-size:18px;
+
+}
+
+footer{
+	margin-top:200px;
+}
+
+footer.footer-menu{
+	position:absolute;
+	bottom:0px
+}
+
+

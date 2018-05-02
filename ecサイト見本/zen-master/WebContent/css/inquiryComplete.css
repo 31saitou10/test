@@ -1,0 +1,118 @@
+@CHARSET "UTF-8";
+/*--全ページ共通--*/
+@font-face{
+    font-family: 'hannari';
+    src: url("./hannari/hannari.otf") format('opentype');
+}/*プラグインした、はんなり明朝というwebフォントです。*/
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+
+
+/*--背景画像--*/
+body{
+	background-attachment: fixed;
+	position:relative;
+	background-image:url("../images/backhome.jpg");
+	background-size:cover;
+    height:80%;
+    margin:0 auto;
+    display:block;
+    z-index:-5;/*--背景画像の上に要素を置けるようにする処理--*/
+}
+
+/*--全画面共通--*/
+
+/*--お問い合わせページ--*/
+
+#haikei{
+    top:200px;
+    width:70%;
+    height:70%;
+    left:100px;
+    right:100px;
+    background-color:rgba(255,255,255,0.5);
+    z-index: -10;/*他の要素の上に背景色が来ないようにする*/
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:20px;
+    margin-top:5%;
+    margin-bottom:50px;
+    padding-bottom:50px;
+}
+
+
+#top{
+    font-size:18px;/*フォントの大きさ*/
+    border: 1px solid #ccc;/*したのボーダー*/
+    width:70%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding:8px 0;
+    text-align: center;
+    font-family: 'hannari';
+
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing:0;
+    border: 1px solid #cbcbcb;
+    width: 70%;
+    box-sizing: border-box;
+	text-align: center;
+	margin-bottom: 15px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table th{
+border-left:1px solid #cbcbcb;
+border-bottom:1px solid #cbcbcb;
+font-size: 15px;
+margin: 0;
+color:white;
+text-align:center;
+white-space:nowrap;
+background-color: black;
+}
+
+table td{
+border-left:1px solid #cbcbcb;
+border-bottom:1px solid #cbcbcb;
+font-size: 15px;
+margin: 0;
+padding:10px 38px;
+text-align:center;
+}
+
+
+p{
+	text-align: center;
+	padding-top: 30px;
+	font-family: 'hannari';
+}
+
+.back{
+	text-align: center;
+	font-family: 'hannari';
+	padding-top:20px;
+	text-decoration:none;
+}
+
+footer{
+	margin-top:300px;
+}
+
+footer.footer-menu{
+	position:absolute;
+	bottom:0px
+}
+
+

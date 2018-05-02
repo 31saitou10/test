@@ -1,0 +1,167 @@
+/*--全ページ共通--*/
+@font-face {
+	font-family: 'hannari';
+	src: url("../webfont/hannari.otf") format('opentype');
+} /*プラグインした、はんなり明朝というwebフォントです。これはプラグインしただけなので
+使うところにfont-familyで指定して下さい。*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	width: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	filter: sepia(40%);
+	background-image: url("../images/backhome.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	z-index: 0;
+}
+
+.header-wrapper {
+	width: 100%;
+	height: 10%;
+	filter: sepia(40%);
+	background-color: #121311;
+}
+
+.icon {
+	float: left;
+	margin: 0 0 0 4%;
+}
+
+.search {
+	padding-top: 35px;
+}
+
+.search1 {
+	clear: both;
+	float: left;
+	margin-left: 13%;
+}
+
+.select1 {
+	padding: 5px;
+}
+
+.search2 {
+	float: left;
+	margin-left: 1%;
+}
+
+.box1 {
+	height: 30px;
+	padding: 0 10px;
+	width: 200px !important;
+	border-radius: 25px;
+	border: 2px solid white;
+	outline: 0;
+}
+
+.search3 {
+	margin: 2px 0 0 0;
+	padding: 0;
+	clear: both;
+	display: inline-block;
+}
+
+header ul {
+	clear: both;
+	float: left;
+	margin-left: 45%;
+	margin-top: -55px;
+}
+
+header li {
+	float: left;
+	list-style: none;
+	padding-left: 35px;
+	font-family: 'hannari';
+	font-size: 25px;
+	color: #cccccc;
+}
+
+header a {
+	color: #cccccc;
+	text-decoration: none;
+}
+
+/*--ここまで共通--*/
+.main {
+	margin: 0 auto;
+	width: 100%;
+	height: 80%;
+}
+
+.zen {
+	width: 100%;
+	float: left;
+	margin: 0 auto;
+	display: none;
+}
+
+.zen img {
+	display: block;
+	margin: 6% auto;
+}
+
+.catchphrase {
+	width: 100%;
+	height: 80%;
+}
+
+.catchphrase p {
+	writing-mode: vertical-rl;
+	-ms-writing-mode: tb-rl;
+	-webkit-writing-mode: vertical-rl;
+	line-height: 2.5em;
+	display: block;
+	font-family: 'hannari';
+	font-size: 150%;
+	color: #121311;
+	z-index: 1;
+	writing-mode: vertical-rl;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10%;
+}
+
+.footer-menu {
+	clear: both;
+	width: 100%;
+	height: 10%;
+	position: fixed;
+	bottom: 0;
+	background-color: #121311;
+}
+
+footer a {
+	color: #cccccc;
+	text-decoration: none;
+}
+
+.inquiry {
+	position: absolute;
+	left: 10%;
+	line-height: 90px;
+	font-family: 'hannari';
+	font-size: 150%;
+}
+
+.company {
+	position: absolute;
+	right: 15%;
+	line-height: 90px;
+	font-family: 'hannari';
+	font-size: 150%;
+	color: #cccccc;
+}

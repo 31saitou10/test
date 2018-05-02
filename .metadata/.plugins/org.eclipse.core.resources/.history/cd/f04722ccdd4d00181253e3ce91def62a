@@ -1,0 +1,9 @@
+package com.internousdev.MaiamiBurgur1.action;
+
+public class UserCreateAction extends ActionSupport{
+	public String execute() {
+		return SUCCESS;
+	}
+
+}
+

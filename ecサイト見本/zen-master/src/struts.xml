@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- Strutsの詳細設定 -->
+
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 対象のpackageを設定 -->
+	<package name="com.internousdev.zen.action" extends="struts-default">
+
+		<action name="UserCreateAction" class="com.internousdev.zen.action.UserCreateAction"
+			method="execute">
+			<result name="success">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateConfirmAction"
+			class="com.internousdev.zen.action.UserCreateConfirmAction" method="execute">
+			<result name="success">userCreateConfirm.jsp</result>
+			<result name="error">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateCompleteAction"
+			class="com.internousdev.zen.action.UserCreateCompleteAction" method="execute">
+			<result name="success">userCreateComplete.jsp</result>
+			<result name="error">userCreate.jsp</result>
+		</action>
+
+		<action name="ResetPasswordAction" class="com.internousdev.zen.action.ResetPasswordAction"
+			method="execute">
+			<result name="success">resetPassword.jsp</result>
+		</action>
+
+		<action name="ResetPasswordConfirmAction"
+			class="com.internousdev.zen.action.ResetPasswordConfirmAction"
+			method="execute">
+			<result name="success">resetPasswordConfirm.jsp</result>
+			<result name="error">resetPassword.jsp</result>
+		</action>
+
+		<action name="ResetPasswordCompleteAction"
+			class="com.internousdev.zen.action.ResetPasswordCompleteAction"
+			method="execute">
+			<result name="success">resetPasswordComplete.jsp</result>
+			<result name="error">resetPassword.jsp</result>
+		</action>
+
+
+		<action name="GoHomeAction" class="com.internousdev.zen.action.GoHomeAction"
+			method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+		<action name="GoLoginAction" class="com.internousdev.zen.action.GoLoginAction"
+			method="execute">
+			<result name="success">login.jsp</result>
+		</action>
+
+
+		<action name="LoginAction" class="com.internousdev.zen.action.LoginAction"
+			method="execute">
+			<result name="success">home.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+		<action name="LogoutAction" class="com.internousdev.zen.action.LogoutAction"
+			method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+		<action name="MyPageAction" class="com.internousdev.zen.action.MyPageAction"
+			method="execute">
+			<result name="success">myPage.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+		<action name="BuyItemHistoryAction" class="com.internousdev.zen.action.BuyItemHistoryAction"
+			method="execute">
+			<result name="success">buyItemHistory.jsp</result>
+		</action>
+
+		<action name="ProductListAction" class="com.internousdev.zen.action.ProductListAction"
+			method="execute">
+			<result name="success">productList.jsp</result>
+		</action>
+
+		<action name="ProductDetailsAction" class="com.internousdev.zen.action.ProductDetailsAction"
+			method="execute">
+			<result name="success">productDetails.jsp</result>
+		</action>
+
+		<action name="DestinationAddAction" class="com.internousdev.zen.action.DestinationAddAction"
+			method="execute">
+			<result name="success">destinationAdd.jsp</result>
+		</action>
+
+		<action name="DestinationAddConfirmAction"
+			class="com.internousdev.zen.action.DestinationAddConfirmAction"
+			method="execute">
+			<result name="success">destinationAddConfirm.jsp</result>
+			<result name="error">destinationAdd.jsp</result>
+		</action>
+
+		<action name="DestinationAddCompleteAction"
+			class="com.internousdev.zen.action.DestinationAddCompleteAction"
+			method="execute">
+			<result name="success">destinationAddComplete.jsp</result>
+			<result name="error">destinationAdd.jsp</result>
+		</action>
+
+		<action name="DestinationAddFixAction"
+			class="com.internousdev.zen.action.DestinationAddFixAction" method="execute">
+			<result name="success">destinationAdd.jsp</result>
+		</action>
+
+		<action name="ProductSearchAction" class="com.internousdev.zen.action.ProductSearchAction"
+			method="execute">
+			<result name="success">productList.jsp</result>
+		</action>
+
+
+		<action name="InquiryAction" class="com.internousdev.zen.action.InquiryAction"
+			method="execute">
+			<result name="success">inquiry.jsp</result>
+		</action>
+
+		<action name="InquiryCompleteAction"
+			class="com.internousdev.zen.action.InquiryCompleteAction" method="execute">
+			<result name="success">inquiryComplete.jsp</result>
+			<result name="error">inquiry.jsp</result>
+		</action>
+
+		<action name="PaymentAction" class="com.internousdev.zen.action.PaymentAction"
+			method="execute">
+			<result name="success">payment.jsp</result>
+			<result name="back">errorCart.jsp</result>
+			<result name="back2">errorAddress.jsp</result>
+			<result name="login">login.jsp</result>
+			<result name="error">cart.jsp</result>
+		</action>
+
+		<action name="PaymentConfirmAction" class="com.internousdev.zen.action.PaymentConfirmAction"
+			method="execute">
+			<result name="success">paymentConfirm.jsp</result>
+
+
+			<result name="error">home.jsp</result>
+		</action>
+
+		<action name="PaymentCompleteAction"
+			class="com.internousdev.zen.action.PaymentCompleteAction" method="execute">
+			<result name="success">paymentComplete.jsp</result>
+			<result name="error">error.jsp</result>
+			<result name="input">home.jsp</result>
+		</action>
+
+		<!-- CartAction -->
+		<action name="CartAction" class="com.internousdev.zen.action.CartAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+		</action>
+
+		<!-- goCartInsertAction -->
+		<action name="goCartInsertAction" class="com.internousdev.zen.action.goCartInsertAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+		</action>
+
+		<!-- CartDeleteAction -->
+		<action name="CartDeleteAction" class="com.internousdev.zen.action.CartDeleteAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+		</action>
+
+		<!-- AllDCartDelete -->
+		<action name="AllCartDeleteAction" class="com.internousdev.zen.action.AllCartDeleteAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+		</action>
+
+	</package>
+</struts>

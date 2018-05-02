@@ -1,0 +1,94 @@
+@CHARSET "UTF-8";
+@font-face {
+ 	font-family: 'hannari';
+ 	src: url("./hannari/hannari.otf") format('opentype');
+} /*プラグインした、はんなり明朝というwebフォントです。*/
+* {
+ 	margin: 0px;
+ 	padding: 0px;
+}
+html {
+ 	height: 100%;
+ 	width: 100%;
+}
+body {
+ 	position: absolute;
+ 	height: 100%;
+ 	margin: 0 auto;
+ 	background-image: url("../images/backhome.jpg");
+ 	background-size: cover;
+ 	background-attachment: fixed;
+ 	width: 100%;
+}
+.main {
+ 	width: 100%;
+ 	height: 80%;
+}
+#image-wrap {
+ 	position: relative;
+ 	background-image: url("zen.png");
+ 	background-size: cover;
+ 	width: 1800px;
+ 	height: 1300px;
+ 	z-index: -5; /*--背景画像の上に要素を置けるようにする処理--*/
+}
+h2 {
+ 	font-size: 18px;
+ 	border: 1px solid #ccc;
+ 	margin-bottom: 15px;
+ 	padding: 8px 15px;
+ 	text-align: center;
+}
+.white {
+ 	border-radius: 5%;
+ 	background-color: rgba(255, 255, 255, 0.6);
+ 	padding-top: 5%;
+ 	width: 70%;
+ 	height: 90%;
+ 	margin: 3% 10% 4% 16%;
+ 	position: relative;
+}
+.destination_form {
+ 	clear: both;
+ 	height: 90%;
+ 	width: 85%;
+ 	margin: 0 auto;
+ 	padding-bottom: 5%;
+}
+table {
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+ 	border: 1px solid #cbcbcb;
+ 	width: 100%;
+ 	box-sizing: border-box;
+ 	height: 60%;
+}
+table td, table th {
+ 	border-left: 1px solid #cbcbcb;
+ 	border-bottom: 1px solid #cbcbcb;
+ 	font-size: 13px;
+ 	margin: 0;
+ 	padding: 10px 13px;
+}
+table th {
+ 	background-color: black;
+ 	color: white;
+ 	text-align: left;
+ 	white-space: nowrap;
+ 	text-align: center;
+}
+.button {
+ 	font-family: 'hannari';
+ 	font-weight: bold;
+ 	color: white;
+ 	background: black;
+ 	font-size: 15px;
+ 	-webkit-box-shadow: 0 10px 6px -6px #777;
+ 	-moz-box-shadow: 0 10px 6px -6px #777;
+ 	box-shadow: 0 10px 6px -6px #777;
+ 	padding: 5px 5px 5px 5px;
+}
+.center {
+ 	margin-top: 10px;
+ 	text-align: center;
+}

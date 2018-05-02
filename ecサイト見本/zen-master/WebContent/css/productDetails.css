@@ -1,0 +1,178 @@
+@CHARSET "UTF-8";
+
+@font-face {
+	font-family: 'hannari';
+	src: url("../webfont/hannari.otf") format('opentype');
+} /*プラグインした、はんなり明朝というwebフォントです。*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	height: auto;
+	width: 100%;
+	background-image: url("../images/backhome.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#white {
+	height: auto;
+	width: 80%;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: auto;
+	min-height: 100vh;
+}
+
+#main {
+	height: auto;
+	font-family: 'hannari';
+	padding: 40px 0 30px 0;
+	margin: auto;
+	width: 100%;
+}
+
+#selectedProduct {
+	height: 50%;
+	width: 100%;
+	max-width: 100%;
+	width: 100%;
+}
+
+#sProductImage {
+	position: relative;
+	left: 10%;
+	margin: 0 auto;
+	height: 80%;
+	width: 30%;
+	float: left
+}
+
+#sProductImage img {
+	border: 0;
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+}
+
+#sProductInfo {
+	position: relative;
+	right: 20%;
+	height: 80%;
+	width: 40%;
+	float: right;
+	max-width: 100%;
+}
+
+.clear {
+	clear: both;
+}
+
+#sProductDetail {
+	width: 80%;
+	margin: 0 auto;
+}
+
+h2 {
+	width: 30%;
+	margin: 0 auto;
+	text-align: center;
+	border-bottom: 2px double black;
+}
+
+table {
+	width: 90%;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 3px solid #cbcbcb;
+	height: 40%;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+table th {
+	width: 30%;
+	border-left: 2px solid #cbcbcb;
+	border-bottom: 2px solid #cbcbcb;
+	font-size: 15px;
+	color: black;
+	text-align: center;
+	white-space: nowrap;
+}
+
+table td {
+	width: 70%;
+	border-left: 2px solid #cbcbcb;
+	border-bottom: 2px solid #cbcbcb;
+	font-size: 15px;
+	padding: 10px 40px;
+	text-align: center;
+}
+
+p {
+	font-size: 25px;
+	text-align: center;
+	padding: 1%;
+}
+
+.sugestProduct {
+	margin-top: 2%;
+	width: 33%;
+	float: left;
+	border: 2px;
+	max-width: 100%;
+	height: 15%;
+}
+
+.sugestProduct li {
+	list-style-type: none;
+	text-align: center;
+}
+
+.sugestProduct h4 {
+	text-align: center;
+}
+
+.float {
+	float: left;
+}
+
+#insertbtn {
+	color: white;
+	background: black;
+	border-radius: 5px;
+	font-family: 'hannari';
+	font-size: 15px;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0 10px 6px -6px #777;
+}
+
+#insertbtn:active {
+	ms-transform: translateY(4px);
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px);
+	border-bottom: none;
+}
+
+#selectbtn {
+	color: white;
+	background: black;
+	border-radius: 5px;
+	font-family: 'hannari';
+	font-size: 15px;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0 10px 6px -6px #777;
+}

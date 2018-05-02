@@ -1,0 +1,94 @@
+@CHARSET "UTF-8";
+@font-face{
+    font-family: 'hannari';
+    src: url("./hannari/hannari.otf") format('opentype');
+}/*プラグインした、はんなり明朝というwebフォントです。*/
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+html{
+    height:100%;
+}
+
+body{
+    height:100%;
+    margin:0 auto;
+    display:block;
+}
+/*--背景画像--*/
+#image-wrap{
+	position:relative;
+	background-image:url("backhome.jpg");
+	background-size:cover;
+	width:1800px;
+	height:1300px;
+    z-index:-5;/*--背景画像の上に要素を置けるようにする処理--*/
+}
+
+#icon{
+    position:absolute;
+    top:15px;
+    left:45px;
+}
+
+
+#header-wrapper{
+	position:absolute;
+	left:200px;
+    top:30px;
+    width:1300px;
+	border-bottom:1px solid black;
+}
+
+
+header ul{
+	clear:both;
+    float:left;
+}
+
+header li{
+	float:left;
+	line-height:50px;
+	list-style:none;
+	padding-left:180px;
+    font-family:'hannari';
+	font-size:25px;
+
+}
+
+header a{
+    color:black;
+    text-decoration:none;
+}
+
+#select1 {
+
+}
+
+#search1 {
+    height:30px;
+	padding:0 10px;
+	width:200px!important;
+	border-radius:25px;
+	border:2px solid white;
+	outline:0;
+}
+
+#search1:active {
+	ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    border-bottom: none;
+}
+
+#btn {
+	margin:0%;
+	padding:0%;
+	clear:both;
+	display:inline-block;
+	width:2%;
+	height:66px;
+}

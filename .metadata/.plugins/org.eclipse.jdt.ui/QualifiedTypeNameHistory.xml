@@ -12,4 +12,5 @@
 <fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="com.internousdev.login.util.DBConnector"/>
+<fullyQualifiedTypeName name="com.internousdev.miami.dao.UserCreateCompleteDAO"/>
 </qualifiedTypeNameHistroy>

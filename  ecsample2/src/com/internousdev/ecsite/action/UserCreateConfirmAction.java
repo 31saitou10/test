@@ -1,7 +1,5 @@
 package com.internousdev.ecsite.action;
 
-import java.util.Map;
-
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.ecsite.dao.UserCreateConfirmDAO;
@@ -15,27 +13,16 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware {
 
 	private String loginUserId;
-
 	private String checkLoginId;
-
 	private String loginPassword;
-
 	private String checkPassword;
-
 	private String userName;
-
 	private String userAddress1;
-
 	private String userAddress2;
-
 	private String userAddress3;
-
 	private String sex;
-
 	private String tell;
-
 	public Map<String,Object> session;
-
 	private String errorMassage;
 
 	public String execute() {

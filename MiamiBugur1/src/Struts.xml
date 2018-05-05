@@ -5,16 +5,10 @@
        <constant name="struts.devMode" value="true" />
        <package name="com.internousdev.miami.action" extends="struts-default">
 
-              <!-- LoginAction -->
-              <action name="LoginAction" class="com.internousdev.miami.action.LoginAction" method="execute">
-                     <result name="success">buyItem.jsp</result>
-                     <result name="error">login.jsp</result>
-              </action>
 
               <!-- UserCreateAction -->
               <action name="UserCreateAction" class="com.internousdev.miami.action.UserCreateAction" method="execute">
                      <result name="success">userCreate.jsp</result>
-                     <result name="back">login.jsp</result>
               </action>
 
               <!-- UserCreateConfirmAction -->
@@ -22,5 +16,12 @@
                      <result name="success">userCreateConfirm.jsp</result>
                      <result name="error">userCreate.jsp</result>
               </action>
+              
+              <!-- UserCreateCompleteAction -->
+              <action name="UserCreateCompleteAction" class="com.internousdev.miami.action.UserCreateCompleteAction" method="execute">
+                     <result name="success">userCreateComplete.jsp</result>
+                     <result name="error">userCreate.jsp</result>
+              </action>
+              
 </package>
 </struts>

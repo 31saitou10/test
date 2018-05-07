@@ -7,7 +7,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware {
-	
+
 	private String userId;             //ユーザーID
 	private String password;           //パスワード
 	private String familyName;         //姓
@@ -27,6 +27,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	private String errorName;          //姓名エラー
 	private String errorNameKana;      //姓名（ひらがな）エラー
 	private String errorEmail;         //メールアドレスエラー
+	private String errorQuestion;      //秘密の質問エラー
 	private String errorAnswer;        //秘密の質問の回答エラー
 
 
@@ -43,7 +44,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		String result = SUCCESS;
 
     /*----ユーザーID-----*/
-	
+
 		//未入力
 		if(userId.equals("")){
 			errorId = "ユーザーIDを入力してください。";
@@ -57,7 +58,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		}
 
 		//文字種エラー
-		else if(!(userId.matches("^[a-zA-Z0-9]+$"))){
+		else if(!(userId.matches("^[0-9a-zA-Z]+$"))){
 			errorId = "ユーザーIDは半角英数字で入力してください。";
 			result = ERROR;
 		}
@@ -79,13 +80,14 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		}
 
 		//文字種エラー
-		else if(!(password.matches("^[a-zA-Z0-9]+$"))){
+		else if(!(password.matches("^[0-9a-zA-Z]+$"))){
 			errorPass ="パスワードは半角英数字で入力してください。";
 			result = ERROR;
 		}
 
 
 	/*-------名前（姓・名）------*/
+
 
 		//未入力
 		if(familyName.equals("") || firstName.equals("")){
@@ -105,6 +107,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 			errorName = "姓・名は半角英字,漢字,ひらがなで入力してください。";
 			result = ERROR;
 		}
+
 
 
 	/*-------名前（せい・めい）---------*/
@@ -128,6 +131,8 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 			result = ERROR;
 		}
 
+
+
 	/*-------メールアドレス------*/
 
 		//未入力
@@ -145,6 +150,12 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		 //文字種エラー
 		else if(!(email.matches("^([a-zA-Z0-9])+([a-zA-Z0-9¥._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9¥._-]+)+$"))){
 			errorEmail = "半角＠を含む正しいメールアドレスの形で入力してください。";
+			result = ERROR;
+		}
+
+	/*------秘密の質問------*/
+		if (!(secretQuestion.matches("^[1-3]+$"))) {
+			errorQuestion = "質問を選択してください。";
 			result = ERROR;
 		}
 
@@ -176,12 +187,13 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		}
 
 
+		return result;
 	}
 
 
 
    /*-----ゲッターとセッター-----*/
-	
+
 	public String getUserId(){
 		return userId;
 	}
@@ -196,7 +208,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 	public void setPassword(String password) {
 		this.password = password;
-	}	
+	}
 	public String getFamilyName() {
 		return familyName;
 	}
@@ -229,6 +241,8 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		this.firstNameKana = firstNameKana;
 	}
 
+
+
 	public int getSex() {
 		return sex;
 	}
@@ -236,6 +250,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public void setSex(int sex) {
 		this.sex = sex;
 	}
+
 
 	public String getEmail() {
 		return email;
@@ -274,5 +289,93 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public void setSession(Map<String,Object> session){
 		this.session = session;
 	}
+
+
+
+	public String getErrorId() {
+		return errorId;
+	}
+
+
+
+	public void setErrorId(String errorId) {
+		this.errorId = errorId;
+	}
+
+
+
+	public String getErrorPass() {
+		return errorPass;
+	}
+
+
+
+	public void setErrorPass(String errorPass) {
+		this.errorPass = errorPass;
+	}
+
+
+
+	public String getErrorName() {
+		return errorName;
+	}
+
+
+
+	public void setErrorName(String errorName) {
+		this.errorName = errorName;
+	}
+
+
+
+	public String getErrorNameKana() {
+		return errorNameKana;
+	}
+
+
+
+	public void setErrorNameKana(String errorNameKana) {
+		this.errorNameKana = errorNameKana;
+	}
+
+
+
+	public String getErrorEmail() {
+		return errorEmail;
+	}
+
+
+
+	public void setErrorEmail(String errorEmail) {
+		this.errorEmail = errorEmail;
+	}
+
+	public String getErrorQuestion() {
+		return errorQuestion;
+	}
+
+
+
+	public void setErrorQuestion(String errorQuestion) {
+		this.errorAnswer = errorQuestion;
+	}
+
+
+	public String getErrorAnswer() {
+		return errorAnswer;
+	}
+
+
+
+	public void setErrorAnswer(String errorAnswer) {
+		this.errorAnswer = errorAnswer;
+	}
+
+
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
 
 }

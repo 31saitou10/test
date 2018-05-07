@@ -17,10 +17,9 @@ create table user_info(
 	sex tinyint default 0,
 	email varchar (32) not null,
 	status tinyint default 0,
-	login_flg tinyint default 0,
-	m_flg tinyint default 0,
-	insert_date datetime not null,
+	logined tinyint default 0,
+	regist_date datetime not null,
 	update_date datetime,
-	secret_question int not null,
+	secret_question varchar(255) not null,
     secret_answer varchar(32) not null
 );

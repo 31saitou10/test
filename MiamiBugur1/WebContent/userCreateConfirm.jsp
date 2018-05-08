@@ -11,22 +11,32 @@
 <meta name="keywords" content="" />
 <title>入力情報確認画面</title>
 </head>
-<body>
-    <h2>新規ユーザー登録確認</h2>
 
-    <s:form action="UserCreateConfirmAction">
+			<script>
+			function goUserCreateCompleteAction() {
+				document.getElementById("form-action").action = "UserCreateCompleteAction";
+				}
+			function goUserCreateAction() {
+				document.getElementById("form-action").action = "UserCreateAction";
+				}
 
-			<div class="contents">
+			</script>
+			<body>
+			 <h2>新規ユーザー登録確認</h2>
 
-			<s:form action="UserCreateCompleteAction">
+
+				<div class="contents">
+
+				<s:form id="form-action" name="form-action"
+					action="UserCreateCompleteAction">
 
 					<div class="form-text">ユーザーID</div>
 					<span><s:property value="userId" escape="false" /> <input
 						type="hidden" name="userId" value='<s:property value="userId"/>'></span>
 
-<%-- 					<div class="form-text">パスワード</div>
-					<span><s:property value="password" escape="false" />
-					<input type="hidden" name="password" value='<s:property value="password"/>'></span> --%>
+ 					<div class="form-text">パスワード</div>
+					<span><s:property value="passCon" escape="false" />
+					<input type="hidden" name="password" value='<s:property value="password"/>'></span>
 
 					<div class="form-text">姓</div>
 					<span><s:property value="familyName" escape="false" />
@@ -45,9 +55,9 @@
 					<input type="hidden" name="firstNameKana" value='<s:property value="firstNameKana"/>'></span>
 
 					<div class="form-text">性別</div>
-					<span><s:if test="sex==0">男</s:if>
-					      <s:if test="sex==1">女</s:if>
-					<input type="hidden" name="sex" value='<s:property value="sex"/>'></span>
+					<s:if test="sex==0">男</s:if>
+					<s:if test="sex==1">女</s:if>
+					<input type="hidden" name="sex" value='<s:property value="sex"/>'>
 
 					<div class="form-text">メールアドレス</div>
 					<span><s:property value="email" escape="false" /> <input
@@ -61,13 +71,16 @@
 					<span><s:property value="secretAnswer" escape="false" />
 					<input type="hidden" name="secretAnswer" value='<s:property value="secretAnswer"/>'></span>
 
-
-		<s:submit  value="登録"/>
-
-
-            </s:form>
-            </div>
-</s:form>
+					<div id="button">
+						<ul>
+							<li><s:submit class="button-layout" value="訂正"
+									onclick="goUserCreateAction();" /></li>
+							<li><s:submit class="button-layout" value="登録"
+									onclick="goUserCreateCompleteAction();" /></li>
+						</ul>
+					</div>
+				</s:form>
+			</div>
 
 
 </body>

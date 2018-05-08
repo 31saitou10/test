@@ -20,20 +20,40 @@
     <h2>ユーザー登録</h2>
 	<p>情報を入力してください</p>
 
-	<s:form action="UserCreateConfirmAction">
+
+<s:form  action="UserCreateConfirmAction">
+
+			<!-- ユーザーID -->
+			 <s:if test="errorId!=null">
+				<s:property value="errorId" />
+			</s:if>
 
 			   <div class="form-text">ユーザーID</div>
 			   <span> <input type="text" name="userId" placeholder=" 半角英数字 " maxlength="8"
 				 value='<s:property value="userId" />' />※8文字以内</span>
 
+			<!-- パスワード -->
+			<div>
+			 <s:if test="errorPass!=null">
+				<s:property value="errorPass" />
+			</s:if>
+			</div>
+
 			   <div class="form-text">パスワード</div>
 			   <span><input type="password" name="password"
 				 placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
 
-				 <td>
+
 			   <div class="form-text">パスワード確認用</div>
 			   <span><input type="password" name="checkLoginId"
 			    placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
+
+			<!-- 名前 -->
+			<div>
+			 <s:if test="errorName!=null">
+				<s:property value="errorName" />
+			</s:if>
+			</div>
 
 			   <div class="form-text">名前（姓）</div>
 			   <span><input type="text" name="familyName" placeholder=" 漢字,ひらがな,半角英字 "
@@ -43,17 +63,31 @@
 			   <span><input type="text" name="firstName" placeholder=" 漢字,ひらがな,半角英字 "
 				 maxlength="16" value='<s:property value="firstName"/>' />※16文字以内 </span>
 
-			   <div class="form-text">ふりがな（姓）</div>
+			<!-- なまえ -->
+			<div>
+			 <s:if test="errorNameKana!=null">
+				<s:property value="errorNameKana" />
+			</s:if></div>
+
+			   <div class="form-text">ふりがな（せい）</div>
 			   <span><input type="text" name="familyNameKana"
 				 placeholder=" ひらがな" maxlength="16" value='<s:property value="familyNameKana"/>' />※16文字以内</span>
 
-			   <div class="form-text">ふりがな（名）</div>
+			   <div class="form-text">ふりがな（めい）</div>
 			   <span><input type="text" name="firstNameKana" maxlength="16"
 				 placeholder=" ひらがな" value='<s:property value="firstNameKana"/>' />※16文字以内</span>
+
 
 			   <div class="form-text">性別</div>
 				 <input type="radio" name="sex" value="男" checked="checked">男
 				 <input type="radio" name="sex" value="女">女
+
+			<!-- メールアドレス -->
+			<div>
+			<s:if test="errorEmail!=null">
+				<s:property value="errorEmail" />
+			</s:if>
+			</div>
 
 			   <div class="form-text">メールアドレス</div>
 			   <span><input type="text" name="email"  placeholder=" 半角英数字,記号 " maxlength="32"
@@ -85,16 +119,22 @@
 			    </select>
 			  </s:else>
 
+			<!-- 質問の答え -->
+			<div>
+			<s:if test="errorAnswer!=null">
+				<s:property value="errorAnswer" />
+			</s:if>
+			</div>
+
 			<div class="form-text">答え</div>
 			<span> <input type="text" name="secretAnswer" maxlength="10"
 			  value='<s:property value="secretAnswer" />' />※10文字以内</span>
 
 
-	 <s:submit value="登録確認" />
+	<s:submit value="登録確認" />
 
 </s:form>
 </body>
-
 
 
 </head>

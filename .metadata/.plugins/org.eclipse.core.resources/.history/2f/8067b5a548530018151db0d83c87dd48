@@ -1,0 +1,294 @@
+package com.internousdev.miamiburger.dto;
+
+public class UserCreateDTO {
+	
+	private String userId;	
+	private String password;	
+	private String familyName;	
+	private String firstName;	
+	private String familyNameKana;	
+	private String firstNameKana;	
+	private String sex;	
+	private String email;	
+	private String secretQuestion;
+	private String secretAnswer;
+	
+	private String passCon;
+	
+	private String errorId;
+	private String errorPass;
+	private String errorCheck;
+	private String errorName;
+	private String errorNameKana;
+	private String errorEmail;
+	private String errorQuestion;
+	private String errorAnswer;
+	/**
+	 * userIdを取得します。
+	 * @return userId
+	 */
+	public String getUserId() {
+	    return userId;
+	}
+	/**
+	 * userIdを設定します。
+	 * @param userId userId
+	 */
+	public void setUserId(String userId) {
+	    this.userId = userId;
+	}
+	/**
+	 * passwordを取得します。
+	 * @return password
+	 */
+	public String getPassword() {
+	    return password;
+	}
+	/**
+	 * passwordを設定します。
+	 * @param password password
+	 */
+	public void setPassword(String password) {
+	    this.password = password;
+	}
+	/**
+	 * familyNameを取得します。
+	 * @return familyName
+	 */
+	public String getFamilyName() {
+	    return familyName;
+	}
+	/**
+	 * familyNameを設定します。
+	 * @param familyName familyName
+	 */
+	public void setFamilyName(String familyName) {
+	    this.familyName = familyName;
+	}
+	/**
+	 * firstNameを取得します。
+	 * @return firstName
+	 */
+	public String getFirstName() {
+	    return firstName;
+	}
+	/**
+	 * firstNameを設定します。
+	 * @param firstName firstName
+	 */
+	public void setFirstName(String firstName) {
+	    this.firstName = firstName;
+	}
+	/**
+	 * familyNameKanaを取得します。
+	 * @return familyNameKana
+	 */
+	public String getFamilyNameKana() {
+	    return familyNameKana;
+	}
+	/**
+	 * familyNameKanaを設定します。
+	 * @param familyNameKana familyNameKana
+	 */
+	public void setFamilyNameKana(String familyNameKana) {
+	    this.familyNameKana = familyNameKana;
+	}
+	/**
+	 * firstNameKanaを取得します。
+	 * @return firstNameKana
+	 */
+	public String getFirstNameKana() {
+	    return firstNameKana;
+	}
+	/**
+	 * firstNameKanaを設定します。
+	 * @param firstNameKana firstNameKana
+	 */
+	public void setFirstNameKana(String firstNameKana) {
+	    this.firstNameKana = firstNameKana;
+	}
+	/**
+	 * sexを取得します。
+	 * @return sex
+	 */
+	public String getSex() {
+	    return sex;
+	}
+	/**
+	 * sexを設定します。
+	 * @param sex sex
+	 */
+	public void setSex(String sex) {
+	    this.sex = sex;
+	}
+	/**
+	 * emailを取得します。
+	 * @return email
+	 */
+	public String getEmail() {
+	    return email;
+	}
+	/**
+	 * emailを設定します。
+	 * @param email email
+	 */
+	public void setEmail(String email) {
+	    this.email = email;
+	}
+	/**
+	 * secretQuestionを取得します。
+	 * @return secretQuestion
+	 */
+	public String getSecretQuestion() {
+	    return secretQuestion;
+	}
+	/**
+	 * secretQuestionを設定します。
+	 * @param secretQuestion secretQuestion
+	 */
+	public void setSecretQuestion(String secretQuestion) {
+	    this.secretQuestion = secretQuestion;
+	}
+	/**
+	 * secretAnswerを取得します。
+	 * @return secretAnswer
+	 */
+	public String getSecretAnswer() {
+	    return secretAnswer;
+	}
+	/**
+	 * secretAnswerを設定します。
+	 * @param secretAnswer secretAnswer
+	 */
+	public void setSecretAnswer(String secretAnswer) {
+	    this.secretAnswer = secretAnswer;
+	}
+	/**
+	 * passConを取得します。
+	 * @return passCon
+	 */
+	public String getPassCon() {
+	    return passCon;
+	}
+	/**
+	 * passConを設定します。
+	 * @param passCon passCon
+	 */
+	public void setPassCon(String passCon) {
+	    this.passCon = passCon;
+	}
+	/**
+	 * errorIdを取得します。
+	 * @return errorId
+	 */
+	public String getErrorId() {
+	    return errorId;
+	}
+	/**
+	 * errorIdを設定します。
+	 * @param errorId errorId
+	 */
+	public void setErrorId(String errorId) {
+	    this.errorId = errorId;
+	}
+	/**
+	 * errorPassを取得します。
+	 * @return errorPass
+	 */
+	public String getErrorPass() {
+	    return errorPass;
+	}
+	/**
+	 * errorPassを設定します。
+	 * @param errorPass errorPass
+	 */
+	public void setErrorPass(String errorPass) {
+	    this.errorPass = errorPass;
+	}
+	/**
+	 * errorCheckを取得します。
+	 * @return errorCheck
+	 */
+	public String getErrorCheck() {
+	    return errorCheck;
+	}
+	/**
+	 * errorCheckを設定します。
+	 * @param errorCheck errorCheck
+	 */
+	public void setErrorCheck(String errorCheck) {
+	    this.errorCheck = errorCheck;
+	}
+	/**
+	 * errorNameを取得します。
+	 * @return errorName
+	 */
+	public String getErrorName() {
+	    return errorName;
+	}
+	/**
+	 * errorNameを設定します。
+	 * @param errorName errorName
+	 */
+	public void setErrorName(String errorName) {
+	    this.errorName = errorName;
+	}
+	/**
+	 * errorNameKanaを取得します。
+	 * @return errorNameKana
+	 */
+	public String getErrorNameKana() {
+	    return errorNameKana;
+	}
+	/**
+	 * errorNameKanaを設定します。
+	 * @param errorNameKana errorNameKana
+	 */
+	public void setErrorNameKana(String errorNameKana) {
+	    this.errorNameKana = errorNameKana;
+	}
+	/**
+	 * errorEmailを取得します。
+	 * @return errorEmail
+	 */
+	public String getErrorEmail() {
+	    return errorEmail;
+	}
+	/**
+	 * errorEmailを設定します。
+	 * @param errorEmail errorEmail
+	 */
+	public void setErrorEmail(String errorEmail) {
+	    this.errorEmail = errorEmail;
+	}
+	/**
+	 * errorQuestionを取得します。
+	 * @return errorQuestion
+	 */
+	public String getErrorQuestion() {
+	    return errorQuestion;
+	}
+	/**
+	 * errorQuestionを設定します。
+	 * @param errorQuestion errorQuestion
+	 */
+	public void setErrorQuestion(String errorQuestion) {
+	    this.errorQuestion = errorQuestion;
+	}
+	/**
+	 * errorAnswerを取得します。
+	 * @return errorAnswer
+	 */
+	public String getErrorAnswer() {
+	    return errorAnswer;
+	}
+	/**
+	 * errorAnswerを設定します。
+	 * @param errorAnswer errorAnswer
+	 */
+	public void setErrorAnswer(String errorAnswer) {
+	    this.errorAnswer = errorAnswer;
+	}
+	
+	
+}

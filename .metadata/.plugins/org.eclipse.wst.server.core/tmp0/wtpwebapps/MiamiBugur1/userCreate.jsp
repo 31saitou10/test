@@ -24,13 +24,14 @@
 <s:form  action="UserCreateConfirmAction">
 
 			<!-- ユーザーID -->
+			<div>
 			 <s:if test="errorId!=null">
 				<s:property value="errorId" />
 			</s:if>
+			</div>
 
 			   <div class="form-text">ユーザーID</div>
-			   <span> <input type="text" name="userId" placeholder=" 半角英数字 " maxlength="8"
-				 value='<s:property value="userId" />' />※8文字以内</span>
+			   <span> <input type="text" name="userId" placeholder=" 半角英数字 " maxlength="8" />※8文字以内</span>
 
 			<!-- パスワード -->
 			<div>
@@ -40,13 +41,17 @@
 			</div>
 
 			   <div class="form-text">パスワード</div>
-			   <span><input type="password" name="password"
-				 placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
+			   <span><input type="password" name="password" placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
 
+			<!-- パスワード確認 -->
+			<div>
+			<s:if test="errorCheck!=null">
+				<s:property value="errorCheck" />
+			</s:if>
+			</div>
 
 			   <div class="form-text">パスワード確認用</div>
-			   <span><input type="password" name="checkLoginId"
-			    placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
+			   <span><input type="password" name="checkLoginId" placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
 
 			<!-- 名前 -->
 			<div>
@@ -56,26 +61,23 @@
 			</div>
 
 			   <div class="form-text">名前（姓）</div>
-			   <span><input type="text" name="familyName" placeholder=" 漢字,ひらがな,半角英字 "
-				 maxlength="16" value='<s:property value="familyName"/>' />※16文字以内 </span>
+			   <span><input type="text" name="familyName" placeholder=" 漢字,ひらがな,半角英字 " maxlength="16" />※16文字以内 </span>
 
 			   <div class="form-text">名前（名）</div>
-			   <span><input type="text" name="firstName" placeholder=" 漢字,ひらがな,半角英字 "
-				 maxlength="16" value='<s:property value="firstName"/>' />※16文字以内 </span>
+			   <span><input type="text" name="firstName" placeholder=" 漢字,ひらがな,半角英字 "  maxlength="16" />※16文字以内 </span>
 
 			<!-- なまえ -->
 			<div>
 			 <s:if test="errorNameKana!=null">
 				<s:property value="errorNameKana" />
-			</s:if></div>
+			</s:if>
+			</div>
 
 			   <div class="form-text">ふりがな（せい）</div>
-			   <span><input type="text" name="familyNameKana"
-				 placeholder=" ひらがな" maxlength="16" value='<s:property value="familyNameKana"/>' />※16文字以内</span>
+			   <span><input type="text" name="familyNameKana"placeholder=" ひらがな" maxlength="16" />※16文字以内</span>
 
 			   <div class="form-text">ふりがな（めい）</div>
-			   <span><input type="text" name="firstNameKana" maxlength="16"
-				 placeholder=" ひらがな" value='<s:property value="firstNameKana"/>' />※16文字以内</span>
+			   <span><input type="text" name="firstNameKana" maxlength="16" placeholder=" ひらがな" />※16文字以内</span>
 
 
 			   <div class="form-text">性別</div>
@@ -90,8 +92,7 @@
 			</div>
 
 			   <div class="form-text">メールアドレス</div>
-			   <span><input type="text" name="email"  placeholder=" 半角英数字,記号 " maxlength="32"
-				 value='<s:property value="email"/>' />※14文字～32文字</span>
+			   <span><input type="text" name="email"  placeholder=" 半角英数字,記号 " maxlength="32" />※14文字～32文字</span>
 
 
 			   <div class="form-text">秘密の質問</div>
@@ -127,8 +128,7 @@
 			</div>
 
 			<div class="form-text">答え</div>
-			<span> <input type="text" name="secretAnswer" maxlength="10"
-			  value='<s:property value="secretAnswer" />' />※10文字以内</span>
+			<span> <input type="text" name="secretAnswer" maxlength="10" />※10文字以内</span>
 
 
 	<s:submit value="登録確認" />

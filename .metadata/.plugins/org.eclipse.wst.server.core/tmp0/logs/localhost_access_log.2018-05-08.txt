@@ -114,3 +114,11 @@
 0:0:0:0:0:0:0:1 - - [08/May/2018:16:46:10 +0900] "POST /MiamiBugur1/UserCreateConfirmAction.action HTTP/1.1" 200 3694
 0:0:0:0:0:0:0:1 - - [08/May/2018:17:02:11 +0900] "POST /MiamiBugur1/UserCreateConfirmAction.action HTTP/1.1" 200 2659
 0:0:0:0:0:0:0:1 - - [08/May/2018:17:02:16 +0900] "POST /MiamiBugur1/UserCreateCompleteAction HTTP/1.1" 200 7749
+127.0.0.1 - - [08/May/2018:17:05:54 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [08/May/2018:17:05:56 +0900] "GET /MiamiBugur1/ HTTP/1.1" 200 3371
+0:0:0:0:0:0:0:1 - - [08/May/2018:17:06:22 +0900] "POST /MiamiBugur1/UserCreateConfirmAction.action HTTP/1.1" 200 2655
+0:0:0:0:0:0:0:1 - - [08/May/2018:17:06:31 +0900] "POST /MiamiBugur1/UserCreateCompleteAction HTTP/1.1" 200 7749
+0:0:0:0:0:0:0:1 - - [08/May/2018:17:25:11 +0900] "POST /MiamiBugur1/UserCreateCompleteAction HTTP/1.1" 200 7749
+0:0:0:0:0:0:0:1 - - [08/May/2018:17:42:17 +0900] "POST /MiamiBugur1/UserCreateCompleteAction HTTP/1.1" 200 7749
+0:0:0:0:0:0:0:1 - - [08/May/2018:17:46:47 +0900] "POST /MiamiBugur1/UserCreateConfirmAction.action HTTP/1.1" 200 2655
+0:0:0:0:0:0:0:1 - - [08/May/2018:17:47:00 +0900] "POST /MiamiBugur1/UserCreateCompleteAction HTTP/1.1" 200 7749

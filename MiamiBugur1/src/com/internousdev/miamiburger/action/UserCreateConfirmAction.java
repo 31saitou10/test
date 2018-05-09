@@ -42,6 +42,17 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 		String result = SUCCESS;
 
+		session.put("userId", userId);
+		session.put("password",password);
+		session.put("familyName",familyName);
+		session.put("firstName",firstName);
+		session.put("familyNameKana",familyNameKana);
+		session.put("firstNameKana",firstNameKana);
+		session.put("sex",sex);
+		session.put("email",email);
+		session.put("secretQuestion",secretQuestion);
+		session.put("secretAnswer",secretQuestion);
+
     /*----ユーザーID-----*/
 
 		//未入力
@@ -61,7 +72,6 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 			errorId = "ユーザーIDは半角英数字で入力してください。";
 			result = ERROR;
 		}
-
 
 
 	/*------パスワード------*/
@@ -93,6 +103,11 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		}
 
 		//入力間違え
+		else if (password == errorCheck) {
+			   errorCheck = "";
+			 } else {
+			   errorCheck =  "パスワードが一致しません";
+			 }
 
 	/*-------名前（姓・名）------*/
 
@@ -360,11 +375,9 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	}
 
 
-
 	public void setErrorNameKana(String errorNameKana) {
 		this.errorNameKana = errorNameKana;
 	}
-
 
 
 	public String getErrorEmail() {
@@ -372,15 +385,14 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	}
 
 
-
 	public void setErrorEmail(String errorEmail) {
 		this.errorEmail = errorEmail;
 	}
 
+
 	public String getErrorQuestion() {
 		return errorQuestion;
 	}
-
 
 
 	public void setErrorQuestion(String errorQuestion) {
@@ -393,11 +405,9 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	}
 
 
-
 	public void setErrorAnswer(String errorAnswer) {
 		this.errorAnswer = errorAnswer;
 	}
-
 
 
 	public Map<String, Object> getSession() {

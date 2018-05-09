@@ -25,51 +25,61 @@
 			 <h2>新規ユーザー登録確認</h2>
 
 
-				<div class="contents">
+				<s:form action="UserCreateCompleteAction">
 
-				<s:form id="form-action" name="form-action"
-					action="UserCreateCompleteAction">
+					<tr>
 
-					<div class="form-text">ユーザーID</div>
-					<span><s:property value="userId" escape="false" /> <input
-						type="hidden" name="userId" value='<s:property value="userId"/>'></span>
+ 					<tr>
+ 					<th>パスワード</th>
+					<td><s:property value="passCon" escape="false" /></td>
+					</tr>
 
- 					<div class="form-text">パスワード</div>
-					<span><s:property value="passCon" escape="false" />
-					<input type="hidden" name="password" value='<s:property value="password"/>'></span>
+ 					<tr>
+ 					<th>パスワード</th>
+					<td><s:property value="passCon" escape="false" /></td>
+					</tr>
 
-					<div class="form-text">姓</div>
-					<span><s:property value="familyName" escape="false" />
-					 <input type="hidden" name="familyName" value='<s:property value="familyName"/>'></span>
+					<tr>
+					<th>姓</th>
+					<td><s:property value="familyName" escape="false" /></td>
+					</tr>
 
-					<div class="form-text">名</div>
-					<span><s:property value="firstName" escape="false" />
-					<input type="hidden" name="firstName" value='<s:property value="firstName"/>'></span>
+					<tr>
+					<th>名</th>
+					<td><s:property value="firstName" escape="false" /></td>
+					</tr>
 
-					<div class="form-text">せい</div>
-					<span><s:property value="familyNameKana" escape="false" />
-					<input type="hidden" name="familyNameKana" value='<s:property value="familyNameKana"/>'></span>
+					<tr>
+					<th>せい</th>
+					<td><s:property value="familyNameKana" escape="false" /></td>
+					</tr>
 
-					<div class="form-text">めい</div>
-					<span><s:property value="firstNameKana" escape="false" />
-					<input type="hidden" name="firstNameKana" value='<s:property value="firstNameKana"/>'></span>
+					<tr>
+					<th>めい</th>
+					<td><s:property value="firstNameKana" escape="false" /></td>
+					</tr>
 
-					<div class="form-text">性別</div>
+					<tr>
+					<th>性別</th>
 					<s:if test="sex==0">男</s:if>
 					<s:if test="sex==1">女</s:if>
-					<input type="hidden" name="sex" value='<s:property value="sex"/>'>
+					</tr>
 
-					<div class="form-text">メールアドレス</div>
-					<span><s:property value="email" escape="false" /> <input
-						type="hidden" name="email" value='<s:property value="email"/>'></span>
+					<tr>
+					<th>メールアドレス</th>
+					<td><s:property value="email" escape="false" /></td>
+					</tr>
 
-					<div class="form-text">秘密の質問</div>
-					<span><s:if test="secretQuestion==1">好きな食べ物</s:if>
-		                  <s:if test="secretQuestion==2">好きな動物</s:if></span>
+					<tr>
+					<th>秘密の質問</th>
+					<td><s:if test="secretQuestion==1">好きな食べ物</s:if>
+		                  <s:if test="secretQuestion==2">好きな動物</s:if></td>
+		            </tr>
 
-					<div class="form-text">質問の答え</div>
-					<span><s:property value="secretAnswer" escape="false" />
-					<input type="hidden" name="secretAnswer" value='<s:property value="secretAnswer"/>'></span>
+					<tr>
+					<th>質問の答え</th>
+					<td><s:property value="secretAnswer" escape="false" /></td>
+					</tr>
 
 					<div id="button">
 						<ul>
@@ -80,7 +90,7 @@
 						</ul>
 					</div>
 				</s:form>
-			</div>
+
 
 
 </body>

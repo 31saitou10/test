@@ -1,0 +1,5 @@
+package com.internousdev.miamiburger.dto;
+
+public class UserCreateDTO {
+
+}

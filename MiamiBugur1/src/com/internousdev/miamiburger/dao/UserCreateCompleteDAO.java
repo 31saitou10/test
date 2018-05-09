@@ -8,16 +8,18 @@ import com.internousdev.miamiburger.util.DBConnector;
 import com.internousdev.miamiburger.util.DateUtil;
 
 public class UserCreateCompleteDAO {
-	private DBConnector dbConnector = new DBConnector();
 
-	private Connection connection = dbConnector.getConnection();
 
-	private DateUtil dateUtil = new DateUtil();
 
-	private String sql="INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,secret_question,secret_answer,regist_date) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+	public int createUser(String userid, String password, String familyname, String firstname, String familynamekana,String firstnamekana, int sex, String email, String secretquestion, String secretanswer) throws SQLException {
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		DateUtil dateUtil = new DateUtil();
 
-	public void createUser(String userid, String password, String familyname, String firstname, String familynamekana,String firstnamekana, int sex, String email, String secretquestion, String secretanswer) throws SQLException {
+		String sql="INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,secret_question,secret_answer,regist_date) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
+
+		int result=0;
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, userid);
@@ -32,12 +34,13 @@ public class UserCreateCompleteDAO {
 			preparedStatement.setString(10, secretanswer);
 			preparedStatement.setString(11, dateUtil.getDate());
 
-			 preparedStatement.execute();
+			result = preparedStatement.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
 			connection.close();
 		}
+		return result;
 	}
 
 }

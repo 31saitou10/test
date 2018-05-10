@@ -51,7 +51,9 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		session.put("sex",sex);
 		session.put("email",email);
 		session.put("secretQuestion",secretQuestion);
-		session.put("secretAnswer",secretQuestion);
+		session.put("secretAnswer",secretAnswer);
+
+//		System.out.println(session.get("sex"));
 
     /*----ユーザーID-----*/
 

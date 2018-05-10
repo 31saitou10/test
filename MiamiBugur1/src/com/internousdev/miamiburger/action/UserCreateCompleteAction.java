@@ -27,6 +27,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	public String execute() throws SQLException {
 		String result=SUCCESS;
 
+
 //		int count =
 				userCreateCompleteDAO.createUser(
 				session.get("userId").toString(),
@@ -35,7 +36,8 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 				session.get("firstName").toString(),
 				session.get("familyNameKana").toString(),
 				session.get("firstNameKana").toString(),
-				Integer.parseInt((session.get("sex")).toString()),
+//				Integer.parseInt(
+				session.get("sex").toString(),
 				session.get("email").toString(),
 				session.get("secretQuestion").toString(),
 				session.get("secretAnswer").toString()

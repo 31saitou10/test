@@ -8,7 +8,7 @@ public class UserCreateDTO {
 	private String firstName;
 	private String familyNameKana;
 	private String firstNameKana;
-	private String sex;
+	private int sex;
 	private String email;
 	private String secretQuestion;
 	private String secretAnswer;
@@ -101,16 +101,17 @@ public class UserCreateDTO {
 	 * sexを取得します。
 	 * @return sex
 	 */
-	public String getSex() {
+	public int getSex() {
 	    return sex;
 	}
 	/**
 	 * sexを設定します。
 	 * @param sex sex
 	 */
-	public void setSex(String sex) {
+	public void setSex(int sex) {
 	    this.sex = sex;
 	}
+
 	/**
 	 * emailを取得します。
 	 * @return email

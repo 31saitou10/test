@@ -81,8 +81,8 @@
 
 
 			   <div class="form-text">性別</div>
-				 <input type="radio" name="sex" value="男" checked="checked">男
-				 <input type="radio" name="sex" value="女">女
+				 <input type="radio" name="sex" value="0" checked="checked">男
+				 <input type="radio" name="sex" value="1">女
 
 			<!-- メールアドレス -->
 			<div>

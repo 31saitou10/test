@@ -22,32 +22,24 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	private String secretAnswer;
 	public Map<String, Object> session;
 
-	private UserCreateCompleteDAO userCreateCompleteDAO=new UserCreateCompleteDAO();
+	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
 
 	public String execute() throws SQLException {
-		String result=SUCCESS;
+		String result = SUCCESS;
 
-
-//		int count =
-				userCreateCompleteDAO.createUser(
+		userCreateCompleteDAO.createUser(
 				session.get("userId").toString(),
 				session.get("password").toString(),
 				session.get("familyName").toString(),
 				session.get("firstName").toString(),
 				session.get("familyNameKana").toString(),
 				session.get("firstNameKana").toString(),
-//				Integer.parseInt(
 				session.get("sex").toString(),
 				session.get("email").toString(),
 				session.get("secretQuestion").toString(),
 				session.get("secretAnswer").toString()
 				);
 
-
-
-//		if(count > 0){
-//			result=SUCCESS;
-//		}
 		return result;
 	}
 
@@ -131,8 +123,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 		this.secretAnswer = secretAnswer;
 	}
 
-
-	public Map<String,Object> getSession() {
+	public Map<String, Object> getSession() {
 		return session;
 	}
 

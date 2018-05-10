@@ -42,6 +42,7 @@ public class UserCreateCompleteDAO {
 			preparedStatement.setString(11, dateUtil.getDate());
 
 			preparedStatement.execute();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

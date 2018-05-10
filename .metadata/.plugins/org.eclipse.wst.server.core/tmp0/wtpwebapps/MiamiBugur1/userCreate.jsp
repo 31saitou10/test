@@ -51,7 +51,7 @@
 			</div>
 
 			   <div class="form-text">パスワード確認用</div>
-			   <span><input type="password" name="checkLoginId" placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
+			   <span><input type="password" name="checkPassword" placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
 
 			<!-- 名前 -->
 			<div>
@@ -81,8 +81,8 @@
 
 
 			   <div class="form-text">性別</div>
-				 <input type="radio" name="sex" value="0" checked="checked">男
-				 <input type="radio" name="sex" value="1">女
+				<span><input type="radio" name="sex" value="0" checked="checked">男
+				 <input type="radio" name="sex" value="1">女</span>
 
 			<!-- メールアドレス -->
 			<div>

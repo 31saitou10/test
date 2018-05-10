@@ -12,22 +12,23 @@
 <title>入力情報確認画面</title>
 </head>
 
-			<script>
-			function goUserCreateCompleteAction() {
-				document.getElementById("form-action").action = "UserCreateCompleteAction";
-				}
-			function goUserCreateAction() {
-				document.getElementById("form-action").action = "UserCreateAction";
-				}
 
-			</script>
+
+
+		<script>
+			function goUserCreateAction(){
+			document.getElementById('form-action').action = 'UserCreateAction';
+			}
+			function goUserCreateCompleteAction(){
+			document.getElementById('form-action').action = 'UserCreateCompleteAction';
+			}
+		</script>
 			<body>
+			<s:form action="UserCreateCompleteAction">
+
 			 <h2>新規ユーザー登録確認</h2>
 
-
-				<s:form action="UserCreateCompleteAction">
-
-					<tr>
+			 <s:form>
 
  					<tr>
  					<th>パスワード</th>
@@ -35,7 +36,7 @@
 					</tr>
 
  					<tr>
- 					<th>パスワード</th>
+ 					<th>確認用パスワード</th>
 					<td><s:property value="passCon" escape="false" /></td>
 					</tr>
 
@@ -61,8 +62,8 @@
 
 					<tr>
 					<th>性別</th>
-					<s:if test="sex==0">男</s:if>
-					<s:if test="sex==1">女</s:if>
+					<td><s:if test="sex==0">男</s:if>
+					<s:if test="sex==1">女</s:if></td>
 					</tr>
 
 					<tr>
@@ -73,7 +74,7 @@
 					<tr>
 					<th>秘密の質問</th>
 					<td><s:if test="secretQuestion==1">好きな食べ物</s:if>
-		                  <s:if test="secretQuestion==2">好きな動物</s:if></td>
+		                <s:if test="secretQuestion==2">好きな動物</s:if></td>
 		            </tr>
 
 					<tr>
@@ -83,13 +84,14 @@
 
 					<div id="button">
 						<ul>
-							<li><s:submit class="button-layout" value="訂正"
-									onclick="goUserCreateAction();" /></li>
-							<li><s:submit class="button-layout" value="登録"
-									onclick="goUserCreateCompleteAction();" /></li>
+							<li><s:submit value="訂正" onclick="goUserCreateAction();" /></li>
+							<li><s:submit value="登録" onclick="goUserCreateCompleteAction();" /></li>
 						</ul>
 					</div>
-				</s:form>
+
+			</s:form>
+			</s:form>
+
 
 
 

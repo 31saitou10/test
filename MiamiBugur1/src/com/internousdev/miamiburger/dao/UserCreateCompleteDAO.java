@@ -16,16 +16,16 @@ public class UserCreateCompleteDAO {
 
 		String sql = "INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,secret_question,secret_answer,regist_date) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
-		 System.out.println(userid);
-		 System.out.println(password);
-		 System.out.println(familyname);
-		 System.out.println(firstname);
-		 System.out.println(familynamekana);
-		 System.out.println(firstnamekana);
-		 System.out.println(sex);
-		 System.out.println(email);
-		 System.out.println(secretquestion);
-		 System.out.println(secretanswer);
+//		 System.out.println(userid);
+//		 System.out.println(password);
+//		 System.out.println(familyname);
+//		 System.out.println(firstname);
+//		 System.out.println(familynamekana);
+//		 System.out.println(firstnamekana);
+//		 System.out.println(sex);
+//		 System.out.println(email);
+//		 System.out.println(secretquestion);
+//		 System.out.println(secretanswer);
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);

@@ -1,11 +1,13 @@
 package com.internousdev.miamiburger.action;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.miamiburger.dao.UserCreateConfirmDAO;
 import com.internousdev.miamiburger.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -51,15 +53,20 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public List<String> ErrorQuestionList = new ArrayList<>();
 	public List<String> ErrorAnswerList = new ArrayList<>();
 
-
+	private UserCreateConfirmDAO userCreateConfirmDAO = new UserCreateConfirmDAO();
 
 	private Map<String,Object> session;
 
 	/*------エラー出力--------*/
 
-	public String execute(){
+	public String execute() throws SQLException{
 
 		String result = ERROR;
+
+		String checkUserId = userCreateConfirmDAO.getConfirmUser(userId);
+
+		System.out.println(checkUserId);
+		System.out.println(userId);
 
 		ErrorUserIdList = inputChecker.doCheck("ユーザーID", userId, 1, 8, true, false, false, true, true);
 		ErrorPasswordList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, true);
@@ -74,6 +81,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 		if(
 				ErrorUserIdList.size() == 0 &&
+				!(checkUserId.equals(userId)) &&
 				ErrorPasswordList.size() == 0 &&
 				ErrorReconfirmPassList.size() == 0 &&
 				ErrorFamilyNameList.size() == 0 &&
@@ -88,6 +96,11 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		}else{
 			for(i=0;i < ErrorUserIdList.size()-1;i++){
 				errorId = errorId + ErrorUserIdList.get(i);
+			}
+			if(!(userId.equals(""))){
+				if (checkUserId.equals(userId)) {
+					errorId = errorId + "そのユーザーIDはすでに使われています";
+				}
 			}
 			for(i=0;i < ErrorPasswordList.size()-1;i++){
 				errorPass = errorPass + ErrorPasswordList.get(i);

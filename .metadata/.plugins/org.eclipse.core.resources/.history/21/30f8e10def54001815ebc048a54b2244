@@ -1,0 +1,43 @@
+package com.internousdev.miamiburger.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.internousdev.miamiburger.dto.UserCreateDTO;
+import com.internousdev.miamiburger.util.DBConnector;
+
+
+public class UserCreateConfirmDAO {
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+
+
+	public ArrayList<UserCreateDTO> getConfirmUser(String UserId) throws SQLException {
+		ArrayList<UserCreateDTO> userCreateDTOList = new ArrayList<UserCreateDTO>();
+
+		System.out.println(userId);
+		String sql = "SELECT * FROM user_info WHERE user_id = ?";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, UserId);
+
+			ResultSet resultSet =preparedStatement.executeQuery();
+
+			if(resultSet.next()) {
+				UserCreateDTO dto = new UserCreateDTO();
+				dto.setUserId(resultSet.getString("user_id"));
+				userCreateDTOList.add(dto);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			connection.close();
+		}
+		return userCreateDTOList;
+	}
+}

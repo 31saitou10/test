@@ -103,8 +103,9 @@
 		<span><input type="text" name="email" placeholder=" 半角英数字,記号 "
 			maxlength="32" />※14文字～32文字</span>
 
+
 		<div>
-			<s:if test="errorEmail!=null">
+			<s:if test="errorQuestion!=null">
 				<s:property value="errorQuestion" />
 			</s:if>
 		</div>

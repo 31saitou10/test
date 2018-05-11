@@ -24,11 +24,16 @@
 			}
 		</script>
 			<body>
-			<s:form action="UserCreateCompleteAction">
+			<s:form id="form-action">
 
 			 <h2>新規ユーザー登録確認</h2>
 
-			 <s:form>
+
+
+ 					<tr>
+ 					<th>ユーザーID</th>
+					<td><s:property value="userId" escape="false" /></td>
+					</tr>
 
  					<tr>
  					<th>パスワード</th>
@@ -89,7 +94,7 @@
 						</ul>
 					</div>
 
-			</s:form>
+
 			</s:form>
 
 

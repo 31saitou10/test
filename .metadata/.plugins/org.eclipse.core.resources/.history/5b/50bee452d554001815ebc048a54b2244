@@ -1,0 +1,31 @@
+package com.internousdev.miamiburger.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.internousdev.miamiburger.util.DBConnector;
+
+
+public class UserCreateConfirmDAO {
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+
+
+	public void createUser(String UserId) throws SQLException {
+
+		String sql = "SELECT * user_info WHERE user_id = ?";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, UserId);
+
+			preparedStatement.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			connection.close();
+		}
+	}
+
+}

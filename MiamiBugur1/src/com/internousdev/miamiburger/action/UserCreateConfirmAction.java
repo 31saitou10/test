@@ -26,14 +26,14 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 	private String passCon;            //パスワードを＊で暗号化
 
-	private String errorId ="";            //IDエラー
-	private String errorPass;          //パスワードエラー
-	private String errorCheck;         //確認用パスワードエラー
-	private String errorName;          //姓名エラー
-	private String errorNameKana;      //姓名（ひらがな）エラー
-	private String errorEmail;         //メールアドレスエラー
+	private String errorId = "";        //IDエラー
+	private String errorPass = "";          //パスワードエラー
+	private String errorCheck = "";         //確認用パスワードエラー
+	private String errorName = "";          //姓名エラー
+	private String errorNameKana = "";      //姓名（ひらがな）エラー
+	private String errorEmail = "";         //メールアドレスエラー
 	private String errorQuestion;      //秘密の質問エラー
-	private String errorAnswer;        //秘密の質問の回答エラー
+	private String errorAnswer = "";        //秘密の質問の回答エラー
 
 
 	int i;
@@ -41,6 +41,16 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	private InputChecker inputChecker = new InputChecker();
 
 	public List<String> ErrorUserIdList = new ArrayList<>();
+	public List<String> ErrorPasswordList = new ArrayList<>();
+	public List<String> ErrorReconfirmPassList = new ArrayList<>();
+	public List<String> ErrorFamilyNameList = new ArrayList<>();
+	public List<String> ErrorFirstNameList = new ArrayList<>();
+	public List<String> ErrorFamilyNameKanaList = new ArrayList<>();
+	public List<String> ErrorFirstNameKanaList = new ArrayList<>();
+	public List<String> ErrorEmailList = new ArrayList<>();
+	public List<String> ErrorQuestionList = new ArrayList<>();
+	public List<String> ErrorAnswerList = new ArrayList<>();
+
 
 
 	private Map<String,Object> session;
@@ -52,14 +62,62 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		String result = ERROR;
 
 		ErrorUserIdList = inputChecker.doCheck("ユーザーID", userId, 1, 8, true, false, false, true, true);
+		ErrorPasswordList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, true);
+		ErrorReconfirmPassList = inputChecker.doPasswordCheck(password, checkPassword);
+		ErrorFamilyNameList = inputChecker.doCheck("姓", familyName, 1, 16, true, true, true, false, false);
+		ErrorFirstNameList = inputChecker.doCheck("名", firstName, 1, 16, true, true, true, false, false);
+		ErrorFamilyNameKanaList = inputChecker.doCheck("姓ふりがな", familyNameKana, 1, 16, false, false, true, false, false);
+		ErrorFirstNameKanaList = inputChecker.doCheck("名ふりがな", firstNameKana, 1, 16, false, false, true, false, false);
+		ErrorEmailList = inputChecker.doCheck("メールアドレス", email, 14, 32, true, false, false, true, true);
+		ErrorAnswerList = inputChecker.doCheck("メールアドレス", secretAnswer, 1, 16, true, true, true, true, true);
 
-		if(ErrorUserIdList.size() == 0){
+
+		if(
+				ErrorUserIdList.size() == 0 &&
+				ErrorPasswordList.size() == 0 &&
+				ErrorReconfirmPassList.size() == 0 &&
+				ErrorFamilyNameList.size() == 0 &&
+				ErrorFirstNameList.size() == 0 &&
+				ErrorFamilyNameKanaList.size() == 0 &&
+				ErrorFirstNameKanaList.size() == 0 &&
+				ErrorEmailList.size() == 0 &&
+				secretQuestion != null &&
+				ErrorAnswerList.size() == 0
+				){
 			result = SUCCESS;
 		}else{
 			for(i=0;i < ErrorUserIdList.size()-1;i++){
 				errorId = errorId + ErrorUserIdList.get(i);
 			}
+			for(i=0;i < ErrorPasswordList.size()-1;i++){
+				errorPass = errorPass + ErrorPasswordList.get(i);
+			}
+			for(i=0;i < ErrorReconfirmPassList.size()-1;i++){
+				errorCheck = errorCheck + ErrorReconfirmPassList.get(i);
+			}
+			for(i=0;i < ErrorFamilyNameList.size()-1;i++){
+				errorName = errorName + ErrorFamilyNameList.get(i);
+			}
+			for(i=0;i < ErrorFirstNameList.size()-1;i++){
+				errorName = errorName + ErrorFirstNameList.get(i);
+			}
+			for(i=0;i < ErrorFamilyNameKanaList.size()-1;i++){
+				errorNameKana = errorNameKana + ErrorFamilyNameKanaList.get(i);
+			}
+			for(i=0;i < ErrorFirstNameKanaList.size()-1;i++){
+				errorNameKana = errorNameKana + ErrorFirstNameKanaList.get(i);
+			}
+			for(i=0;i < ErrorEmailList.size()-1;i++){
+				errorEmail = errorEmail + ErrorEmailList.get(i);
+			}
+			if(secretQuestion != null ){
+				errorQuestion = "選択してください。";
+			}
+			for(i=0;i < ErrorAnswerList.size()-1;i++){
+				errorAnswer = errorAnswer + ErrorAnswerList.get(i);
+			}
 		}
+
 
 		session.put("userId", userId);
 		session.put("password",password);

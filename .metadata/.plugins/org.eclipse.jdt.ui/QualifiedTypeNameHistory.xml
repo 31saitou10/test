@@ -14,4 +14,6 @@
 <fullyQualifiedTypeName name="com.internousdev.login.util.DBConnector"/>
 <fullyQualifiedTypeName name="com.internousdev.miami.dao.UserCreateCompleteDAO"/>
 <fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

@@ -23,3 +23,4 @@ create table user_info(
 	secret_question varchar(255) not null,
     secret_answer varchar(32) not null
 );
+

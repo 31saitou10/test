@@ -5,7 +5,9 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.miamiburger.dao.LoginDAO;
 import com.internousdev.miamiburger.dao.UserCreateCompleteDAO;
+import com.internousdev.miamiburger.dto.UserInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateCompleteAction extends ActionSupport implements SessionAware {
@@ -39,6 +41,15 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 				session.get("secretQuestion").toString(),
 				session.get("secretAnswer").toString()
 				);
+		
+//		ログインする
+		LoginDAO dao = new LoginDAO();
+		UserInfoDTO userInfoDTO = new UserInfoDTO();
+
+		//ユーザーの情報をDTOに詰める
+		userInfoDTO = dao.login(session.get("userId").toString(), session.get("password").toString());
+		
+		session.put("userInfoDTO",userInfoDTO);
 
 		return result;
 	}

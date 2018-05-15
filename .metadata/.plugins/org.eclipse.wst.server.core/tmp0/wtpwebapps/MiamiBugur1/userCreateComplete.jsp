@@ -18,7 +18,7 @@
           <h3>ユーザーの登録が完了致しました。</h3>
        </div>
 
-
+<a href=<s:url action="HomeAction"/>>ホームへ戻る</a>
 
 </body>
 </html>

@@ -17,6 +17,9 @@
 
 </head>
 <body>
+
+<%-- <jsp:include page="header.jsp" /> --%>
+
 	<h2>ユーザー登録</h2>
 	<p>情報を入力してください</p>
 
@@ -31,7 +34,7 @@
 		</div>
 
 		<div class="form-text">ユーザーID</div>
-		<span> <input type="text" name="userId" placeholder=" 半角英数字 "
+		<span> <input type="text" name="userId" placeholder=" 半角英数字 " <s:if test="errorId.equals('')">value=<s:property value="#session.userId"/></s:if>
 			maxlength="8" />※8文字以内
 		</span>
 
@@ -66,11 +69,11 @@
 
 		<div class="form-text">名前（姓）</div>
 		<span><input type="text" name="familyName"
-			placeholder=" 漢字,ひらがな,半角英字 " maxlength="16" />※16文字以内 </span>
+			placeholder=" 漢字,ひらがな,半角英字 " maxlength="16" <s:if test="errorName.equals('')">value=<s:property value="#session.familyName"/></s:if> />※16文字以内 </span>
 
 		<div class="form-text">名前（名）</div>
 		<span><input type="text" name="firstName"
-			placeholder=" 漢字,ひらがな,半角英字 " maxlength="16" />※16文字以内 </span>
+			placeholder=" 漢字,ひらがな,半角英字 " maxlength="16" <s:if test="errorName.equals('')">value=<s:property value="#session.firstName"/></s:if> />※16文字以内 </span>
 
 		<!-- なまえ -->
 		<div>
@@ -81,16 +84,20 @@
 
 		<div class="form-text">ふりがな（せい）</div>
 		<span><input type="text" name="familyNameKana"
-			placeholder=" ひらがな" maxlength="16" />※16文字以内</span>
+			placeholder=" ひらがな" maxlength="16" <s:if test="errorNameKana.equals('')">value=<s:property value="#session.familyNameKana"/></s:if> />※16文字以内</span>
 
 		<div class="form-text">ふりがな（めい）</div>
 		<span><input type="text" name="firstNameKana" maxlength="16"
-			placeholder=" ひらがな" />※16文字以内</span>
+			placeholder=" ひらがな" <s:if test="errorNameKana.equals('')">value=<s:property value="#session.firstNameKana"/></s:if> />※16文字以内</span>
 
 
 		<div class="form-text">性別</div>
+		<s:if test="sex.equals('')||sex == 0">
 		<span><input type="radio" name="sex" value="0"
 			checked="checked">男 <input type="radio" name="sex" value="1">女</span>
+		</s:if>
+		<s:else><span><input type="radio" name="sex" value="0"
+			>男 <input type="radio" name="sex" value="1" checked="checked">女</span></s:else>
 
 		<!-- メールアドレス -->
 		<div>
@@ -101,7 +108,7 @@
 
 		<div class="form-text">メールアドレス</div>
 		<span><input type="text" name="email" placeholder=" 半角英数字,記号 "
-			maxlength="32" />※14文字～32文字</span>
+			maxlength="32" <s:if test="errorEmail.equals('')">value=<s:property value="#session.email"/></s:if> />※14文字～32文字</span>
 
 
 		<div>
@@ -114,7 +121,7 @@
 		<div class="form-text">秘密の質問</div>
 		<s:if test="secretQuestion==1">
 			<select name="secretQuestion" class="form">
-				<option value="">選択してください</option>
+				<option value=null>選択してください</option>
 				<option value="1" selected>好きな食べ物</option>
 				<option value="2">好きな動物</option>
 			</select>
@@ -122,7 +129,7 @@
 
 		<s:elseif test="secretQuestion==2">
 			<select name="secretQuestion" class="form">
-				<option value="">選択してください</option>
+				<option value=null>選択してください</option>
 				<option value="1">好きな食べ物</option>
 				<option value="2" selected>好きな動物</option>
 			</select>
@@ -130,7 +137,7 @@
 
 		<s:else>
 			<select name="secretQuestion" class="form">
-				<option value="">選択してください</option>
+				<option value=null>選択してください</option>
 				<option value="1">好きな食べ物</option>
 				<option value="2">好きな動物</option>
 			</select>
@@ -144,7 +151,7 @@
 		</div>
 
 		<div class="form-text">答え</div>
-		<span> <input type="text" name="secretAnswer" maxlength="10" />※10文字以内
+		<span> <input type="text" name="secretAnswer" maxlength="10" <s:if test="errorAnswer.equals('')">value=<s:property value="#session.secretAnswer"/></s:if> />※10文字以内
 		</span>
 
 

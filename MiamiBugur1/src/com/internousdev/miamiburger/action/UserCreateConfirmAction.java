@@ -76,8 +76,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		ErrorFamilyNameKanaList = inputChecker.doCheck("姓ふりがな", familyNameKana, 1, 16, false, false, true, false, false);
 		ErrorFirstNameKanaList = inputChecker.doCheck("名ふりがな", firstNameKana, 1, 16, false, false, true, false, false);
 		ErrorEmailList = inputChecker.doCheck("メールアドレス", email, 14, 32, true, false, false, true, true);
-		ErrorAnswerList = inputChecker.doCheck("メールアドレス", secretAnswer, 1, 16, true, true, true, true, true);
-
+		ErrorAnswerList = inputChecker.doCheck("質問の答え", secretAnswer, 1, 16, true, true, true, true, true);
 
 		if(
 				ErrorUserIdList.size() == 0 &&
@@ -94,7 +93,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 				){
 			result = SUCCESS;
 		}else{
-			for(i=0;i < ErrorUserIdList.size()-1;i++){
+			for(i=0;i < ErrorUserIdList.size();i++){
 				errorId = errorId + ErrorUserIdList.get(i);
 			}
 			if(!(userId.equals(""))){
@@ -102,35 +101,34 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 					errorId = errorId + "そのユーザーIDはすでに使われています";
 				}
 			}
-			for(i=0;i < ErrorPasswordList.size()-1;i++){
+			for(i=0;i < ErrorPasswordList.size();i++){
 				errorPass = errorPass + ErrorPasswordList.get(i);
 			}
-			for(i=0;i < ErrorReconfirmPassList.size()-1;i++){
+			for(i=0;i < ErrorReconfirmPassList.size();i++){
 				errorCheck = errorCheck + ErrorReconfirmPassList.get(i);
 			}
-			for(i=0;i < ErrorFamilyNameList.size()-1;i++){
+			for(i=0;i < ErrorFamilyNameList.size();i++){
 				errorName = errorName + ErrorFamilyNameList.get(i);
 			}
-			for(i=0;i < ErrorFirstNameList.size()-1;i++){
+			for(i=0;i < ErrorFirstNameList.size();i++){
 				errorName = errorName + ErrorFirstNameList.get(i);
 			}
-			for(i=0;i < ErrorFamilyNameKanaList.size()-1;i++){
+			for(i=0;i < ErrorFamilyNameKanaList.size();i++){
 				errorNameKana = errorNameKana + ErrorFamilyNameKanaList.get(i);
 			}
-			for(i=0;i < ErrorFirstNameKanaList.size()-1;i++){
+			for(i=0;i < ErrorFirstNameKanaList.size();i++){
 				errorNameKana = errorNameKana + ErrorFirstNameKanaList.get(i);
 			}
-			for(i=0;i < ErrorEmailList.size()-1;i++){
+			for(i=0;i < ErrorEmailList.size();i++){
 				errorEmail = errorEmail + ErrorEmailList.get(i);
 			}
-			if(secretQuestion != null ){
+			if(secretQuestion == null ){
 				errorQuestion = "選択してください。";
 			}
-			for(i=0;i < ErrorAnswerList.size()-1;i++){
+			for(i=0;i < ErrorAnswerList.size();i++){
 				errorAnswer = errorAnswer + ErrorAnswerList.get(i);
 			}
 		}
-
 
 		session.put("userId", userId);
 		session.put("password",password);
@@ -147,19 +145,25 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 	/*-----パスワード暗号化(*)------*/
 
-		if (password.length() > 2) {
-			StringBuilder sb = new StringBuilder(password);
-
-			for (int i = 2; i < password.length(); i++) {
-				sb.setCharAt(i, '*');
-				System.out.println(String.valueOf(sb));
+//		if (password.length() > 2) {
+//			StringBuilder sb = new StringBuilder(password);
+//
+//			for (int i = 2; i < password.length(); i++) {
+//				sb.setCharAt(i, '*');
+//				System.out.println(String.valueOf(sb));
+//			}
+//
+//			passCon = sb.toString();
+//		}else if(password.length() == 2){
+//			passCon = "**";
+//		}else if(password.length() == 1){
+//			passCon = "*";
+//		}
+		passCon = "";
+		if(password.length() > 0){
+			for(int i = 0; i < password.length(); i++){
+				passCon += "*";
 			}
-
-			passCon = sb.toString();
-		}else if(password.length() == 2){
-			passCon = "**";
-		}else if(password.length() == 1){
-			passCon = "*";
 		}
 
 

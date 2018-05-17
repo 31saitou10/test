@@ -13,153 +13,217 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta charset="utf-8">
-<title>UserCreate画面</title>
+<title>ユーザー情報入力画面</title>
+<link rel="stylesheet" type="text/css" href="miamiburger.css">
+<link rel="stylesheet" type="text/css" href="userCreate.html">
+
+<style type="text/css">
+
+/*================LAYOUT==============*/
+.UC{
+	text-align: center ;
+	border: 3px solid blue;
+}
+
+/* .UC-error{
+	color: red;
+} */
+
+</style>
 
 </head>
 <body>
 
-<%-- <jsp:include page="header.jsp" /> --%>
+	<div><jsp:include page="header.jsp" /></div>
 
-	<h2>ユーザー登録</h2>
-	<p>情報を入力してください</p>
+	<div class="main">
+		<div class="inner">
+			<div class="UC">
+
+				<h2>ユーザー登録</h2>
+				<p>情報を入力してください</p>
+
+				<s:form action="UserCreateConfirmAction">
+
+					<!-- ユーザーID -->
+
+					<tr>
+						<th>ユーザーID</th>
+						<td><input type="text" name="userId" placeholder=" 半角英数字 "
+							<s:if test="errorId.equals('')"> value=<s:property value="#session.userId"/></s:if>
+							maxlength="8" />※8文字以内</td>
+						<td class="error">
+							<s:if test="errorId!=null">
+								<s:property value="errorId" />
+							</s:if>
+						</td>
+					</tr>
 
 
-	<s:form action="UserCreateConfirmAction">
+					<!-- パスワード -->
 
-		<!-- ユーザーID -->
-		<div>
-			<s:if test="errorId!=null">
-				<s:property value="errorId" />
-			</s:if>
+
+
+					<tr>
+						<th>パスワード</th>
+						<td><input type="password" name="password"
+							placeholder=" 半角英数字 " maxlength="16" />※16文字以内</td>
+						<td class="error">
+							<s:if test="errorPass!=null">
+								<s:property value="errorPass" />
+							</s:if>
+						</td>
+					</tr>
+
+					<!-- パスワード確認 -->
+
+					<tr>
+						<th>パスワード確認用</th>
+						<td><input type="password" name="checkPassword"
+							placeholder=" 半角英数字 " maxlength="16" />※16文字以内</td>
+						<td class="error">
+							<s:if test="errorCheck!=null">
+								<s:property value="errorCheck" />
+							</s:if>
+						</td>
+					</tr>
+
+					<!-- 名前 -->
+
+					<tr>
+						<th>名前（姓）</th>
+						<td><input type="text" name="familyName" placeholder=" 漢字,ひらがな,半角英字 " maxlength="16"
+							<s:if test="errorName.equals('')">value=<s:property value="#session.familyName"/>
+							</s:if> />※16文字以内
+						</td>
+					</tr>
+
+					<tr>
+						<th>名前（名）</th>
+						<td><input type="text" name="firstName"
+							placeholder=" 漢字,ひらがな,半角英字 " maxlength="16"
+							<s:if test="errorName.equals('')">value=<s:property value="#session.firstName"/></s:if> />※16文字以内
+						</td>
+						<td class="error">
+							<s:if test="errorName!=null">
+								<s:property value="errorName" />
+							</s:if>
+						</td>
+					</tr>
+
+					<!-- なまえ -->
+
+					<tr>
+						<th>ふりがな（姓）</th>
+						<td><input type="text" name="familyNameKana"
+							placeholder=" ひらがな" maxlength="16"
+							<s:if test="errorNameKana.equals('')">value=<s:property value="#session.familyNameKana"/></s:if> />※16文字以内
+						</td>
+					</tr>
+
+					<tr>
+						<th>ふりがな（名）</th>
+						<td><input type="text" name="firstNameKana" maxlength="16"
+							placeholder=" ひらがな"
+							<s:if test="errorNameKana.equals('')">value=<s:property value="#session.firstNameKana"/></s:if> />※16文字以内
+						</td>
+						<td class="error"><s:if test="errorNameKana!=null">
+								<s:property value="errorNameKana" />
+							</s:if></td>
+					</tr>
+
+					<!-- 性別 -->
+					<tr>
+						<th>性別</th>
+						<td><s:if test="sex==0">
+								<span> <input type="radio" name="sex" value="0"checked="checked">男
+										<input type="radio" name="sex"value="1">女
+								</span>
+							</s:if> <s:elseif test="sex==1">
+								<span> <input type="radio" name="sex" value="0">男
+										<input type="radio" name="sex" value="1" checked="checked">女
+								</span>
+							</s:elseif> <s:else>
+								<span> <input type="radio" name="sex" value="0"checked="checked">男
+										<input type="radio" name="sex"value="1">女
+								</span>
+							</s:else></td>
+					</tr>
+
+
+					<!-- メールアドレス -->
+
+
+					<tr>
+						<th>メールアドレス</th>
+						<td><input type="text" name="email" placeholder=" 半角英数字,記号 " maxlength="32"
+							<s:if test="errorEmail.equals('')">value=<s:property value="#session.email"/>
+							</s:if> />※14文字～32文字
+						</td>
+						<td class="error">
+							<s:if test="errorEmail!=null">
+								<s:property value="errorEmail" />
+							</s:if>
+						</td>
+					</tr>
+
+
+
+
+					<!-- 秘密の質問 -->
+					<tr>
+						<th>秘密の質問</th>
+						<td><s:if test="secretQuestion==1">
+								<select name="secretQuestion" class="form">
+									<option value=null>選択してください</option>
+									<option value="1" selected>好きな食べ物</option>
+									<option value="2">好きな動物</option>
+								</select>
+							</s:if> <s:elseif test="secretQuestion==2">
+								<select name="secretQuestion" class="form">
+									<option value=null>選択してください</option>
+									<option value="1">好きな食べ物</option>
+									<option value="2" selected>好きな動物</option>
+								</select>
+							</s:elseif> <s:else>
+								<select name="secretQuestion" class="form">
+									<option value=null>選択してください</option>
+									<option value="1">好きな食べ物</option>
+									<option value="2">好きな動物</option>
+								</select>
+							</s:else></td>
+						<td class="error">
+							<s:if test="errorQuestion!=null">
+								<s:property value="errorQuestion" />
+							</s:if>
+						</td>
+					</tr>
+
+					<!-- 質問の答え -->
+
+
+					<tr>
+						<th>質問の答え</th>
+						<td><input type="text" name="secretAnswer" maxlength="10"
+							<s:if test="errorAnswer.equals('')">value=<s:property value="#session.secretAnswer"/>
+							</s:if> />※10文字以内
+						</td>
+						<td class="error">
+							<s:if test="errorAnswer!=null">
+								<s:property value="errorAnswer" />
+							</s:if>
+						</td>
+					</tr>
+
+
+					<s:submit value="登録確認" />
+
+				</s:form>
+			</div>
 		</div>
+	</div>
 
-		<div class="form-text">ユーザーID</div>
-		<span> <input type="text" name="userId" placeholder=" 半角英数字 " <s:if test="errorId.equals('')">value=<s:property value="#session.userId"/></s:if>
-			maxlength="8" />※8文字以内
-		</span>
-
-		<!-- パスワード -->
-		<div>
-			<s:if test="errorPass!=null">
-				<s:property value="errorPass" />
-			</s:if>
-		</div>
-
-		<div class="form-text">パスワード</div>
-		<span><input type="password" name="password"
-			placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
-
-		<!-- パスワード確認 -->
-		<div>
-			<s:if test="errorCheck!=null">
-				<s:property value="errorCheck" />
-			</s:if>
-		</div>
-
-		<div class="form-text">パスワード確認用</div>
-		<span><input type="password" name="checkPassword"
-			placeholder=" 半角英数字 " maxlength="16" />※16文字以内</span>
-
-		<!-- 名前 -->
-		<div>
-			<s:if test="errorName!=null">
-				<s:property value="errorName" />
-			</s:if>
-		</div>
-
-		<div class="form-text">名前（姓）</div>
-		<span><input type="text" name="familyName"
-			placeholder=" 漢字,ひらがな,半角英字 " maxlength="16" <s:if test="errorName.equals('')">value=<s:property value="#session.familyName"/></s:if> />※16文字以内 </span>
-
-		<div class="form-text">名前（名）</div>
-		<span><input type="text" name="firstName"
-			placeholder=" 漢字,ひらがな,半角英字 " maxlength="16" <s:if test="errorName.equals('')">value=<s:property value="#session.firstName"/></s:if> />※16文字以内 </span>
-
-		<!-- なまえ -->
-		<div>
-			<s:if test="errorNameKana!=null">
-				<s:property value="errorNameKana" />
-			</s:if>
-		</div>
-
-		<div class="form-text">ふりがな（せい）</div>
-		<span><input type="text" name="familyNameKana"
-			placeholder=" ひらがな" maxlength="16" <s:if test="errorNameKana.equals('')">value=<s:property value="#session.familyNameKana"/></s:if> />※16文字以内</span>
-
-		<div class="form-text">ふりがな（めい）</div>
-		<span><input type="text" name="firstNameKana" maxlength="16"
-			placeholder=" ひらがな" <s:if test="errorNameKana.equals('')">value=<s:property value="#session.firstNameKana"/></s:if> />※16文字以内</span>
-
-
-		<div class="form-text">性別</div>
-		<s:if test="sex.equals('')||sex == 0">
-		<span><input type="radio" name="sex" value="0"
-			checked="checked">男 <input type="radio" name="sex" value="1">女</span>
-		</s:if>
-		<s:else><span><input type="radio" name="sex" value="0"
-			>男 <input type="radio" name="sex" value="1" checked="checked">女</span></s:else>
-
-		<!-- メールアドレス -->
-		<div>
-			<s:if test="errorEmail!=null">
-				<s:property value="errorEmail" />
-			</s:if>
-		</div>
-
-		<div class="form-text">メールアドレス</div>
-		<span><input type="text" name="email" placeholder=" 半角英数字,記号 "
-			maxlength="32" <s:if test="errorEmail.equals('')">value=<s:property value="#session.email"/></s:if> />※14文字～32文字</span>
-
-
-		<div>
-			<s:if test="errorQuestion!=null">
-				<s:property value="errorQuestion" />
-			</s:if>
-		</div>
-
-
-		<div class="form-text">秘密の質問</div>
-		<s:if test="secretQuestion==1">
-			<select name="secretQuestion" class="form">
-				<option value=null>選択してください</option>
-				<option value="1" selected>好きな食べ物</option>
-				<option value="2">好きな動物</option>
-			</select>
-		</s:if>
-
-		<s:elseif test="secretQuestion==2">
-			<select name="secretQuestion" class="form">
-				<option value=null>選択してください</option>
-				<option value="1">好きな食べ物</option>
-				<option value="2" selected>好きな動物</option>
-			</select>
-		</s:elseif>
-
-		<s:else>
-			<select name="secretQuestion" class="form">
-				<option value=null>選択してください</option>
-				<option value="1">好きな食べ物</option>
-				<option value="2">好きな動物</option>
-			</select>
-		</s:else>
-
-		<!-- 質問の答え -->
-		<div>
-			<s:if test="errorAnswer!=null">
-				<s:property value="errorAnswer" />
-			</s:if>
-		</div>
-
-		<div class="form-text">答え</div>
-		<span> <input type="text" name="secretAnswer" maxlength="10" <s:if test="errorAnswer.equals('')">value=<s:property value="#session.secretAnswer"/></s:if> />※10文字以内
-		</span>
-
-
-		<s:submit value="登録確認" />
-
-	</s:form>
 </body>
-
 
 </head>
 <body>

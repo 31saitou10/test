@@ -1,0 +1,70 @@
+package com.internousdev.miamiburger.action;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.miamiburger.dao.LogoutDAO;
+import com.internousdev.miamiburger.dao.StartDAO;
+import com.internousdev.miamiburger.dto.MCategoryDTO;
+import com.internousdev.miamiburger.dto.UserInfoDTO;
+import com.opensymphony.xwork2.ActionSupport;
+public class LogoutAction extends ActionSupport implements SessionAware {
+
+public Map<String, Object> session;
+public String execute() {
+
+	ArrayList<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
+	/**
+	 * ログアウト時にはセッションを一度空にしますが、再度買い物ができるようにゲストIDは残します
+	 * また、検索用にカテゴリいれます
+	**/
+
+	//ログイン時のみ動く
+	if(session.containsKey("userInfoDTO")){
+
+	//loginedに1を入れる
+
+	//DTOを取得し、その中からuserIdを取得
+	UserInfoDTO dto = new UserInfoDTO();
+	dto = (UserInfoDTO) session.get("userInfoDTO");
+
+
+
+
+	//loginedに1を入れる
+	LogoutDAO logoutDAO= new LogoutDAO();
+	int check = logoutDAO.logout(dto.getUserId());
+	if(check == 0){
+		return "errorDAO";
+	}
+
+
+	//取得したID,ゲスト用ID,（idCheckはログイン時の情報保持）を保存
+	String temp_user_id = session.get("temp_user_id").toString();
+	String userId = dto.getUserId();
+	int idCheck = (int)session.get("idCheck");
+	session.clear();		//セッションクリア
+
+
+	//再度詰め直し
+	session.put("temp_user_id", temp_user_id);
+	session.put("userId", userId);
+	session.put("idCheck", idCheck);
+	StartDAO dao = new StartDAO();
+
+	mCategoryDTOList = dao.categoryInfo();
+	session.put("mCategoryDTOList", mCategoryDTOList);
+
+	}
+	return SUCCESS;
+
+}
+@Override
+public void setSession(Map<String, Object> session) {
+
+this.session = session;
+
+}
+}

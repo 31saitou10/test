@@ -1,0 +1,90 @@
+package com.internousdev.miamiburger.action;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.miamiburger.dao.ChangePasswordCompleteDAO;
+import com.internousdev.miamiburger.util.InputChecker;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class MyPageChangePasswordCompleteAction extends ActionSupport implements SessionAware{
+
+	//session情報
+		public Map<String, Object> session;
+	//エラ―情報
+		private String errorPass = "";          //パスワードエラー
+
+		private InputChecker inputChecker = new InputChecker();
+		public List<String> ErrorPasswordList = new ArrayList<>();
+		int i;
+	//情報を受け取る為の変数の定義
+		private String new_password_1;
+		private String new_password_2;
+
+		public String execute() throws SQLException {
+			String result = ERROR;
+			int check = 0;
+
+			ErrorPasswordList = inputChecker.doCheck("パスワード", new_password_1, 1, 16, true, false, false, true, true);
+
+			if(new_password_2.equals(new_password_1) &&
+			   !(session.get("old_password").toString().equals(new_password_1)) &&
+				ErrorPasswordList.size() == 0
+			){
+	//変更予定のユーザー情報を格納する
+				ChangePasswordCompleteDAO dao = new ChangePasswordCompleteDAO();
+				check = dao.ChangePassword(new_password_1,session.get("userId").toString()) ;
+				if(check == 0){
+					return "errorDAO";
+				}
+				session.put("new_password", new_password_1);
+				result = SUCCESS;
+			}else{
+				errorPass += "パスワードは1回目と2回目で同じものを入力してください。前回と同じパスワードは使用できません。";
+				for(i=0;i < ErrorPasswordList.size();i++){
+					errorPass += ErrorPasswordList.get(i);
+				}
+			}
+	//result結果、SUCCESSを挿入する
+			System.out.println(ErrorPasswordList.size());
+			return result;
+		}
+
+		public Map<String, Object> getSession() {
+			return session;
+		}
+
+		public void setSession(Map<String, Object> session) {
+			this.session = session;
+		}
+
+		public String getNew_password_1() {
+			return new_password_1;
+		}
+
+		public void setNew_password_1(String new_password_1) {
+			this.new_password_1 = new_password_1;
+		}
+
+		public String getNew_password_2() {
+			return new_password_2;
+		}
+
+		public void setNew_password_2(String new_password_2) {
+			this.new_password_2 = new_password_2;
+		}
+
+		public String getErrorPass() {
+			return errorPass;
+		}
+
+		public void setErrorPass(String errorPass) {
+			this.errorPass = errorPass;
+		}
+
+
+}

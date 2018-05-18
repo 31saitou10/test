@@ -17,25 +17,46 @@
 <style type="text/css">
 
 /*================LAYOUT==============*/
-.UCConfirm{
-	padding-left: 30%;
-	border: 3px solid blue;
+body {
+	background-image: url(./images/board.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-size: 100% auto;
 }
-/* .UCConfirm-button{
-	bottom: 0;
-} */
+.inner{
+	margin:auto;
+	width:80%;
+	height:80%;
+/* 	影をつけるボックスのプロパティです */
+	border-left:1px solid black;
+	border-bottom:1px solid black;
+	border-radius:10px;
+	background-color:rgba(255,255,255,0.5);
+	box-shadow:-10px 10px 10px 5px rgba(0,0,0,0.4);
+}
+.UCConfirm-text{
+	padding-left: 15%;
+}
+table{
+	 margin-left: auto;
+	 margin-right: auto;
+}
+
+.button{
+	text-align:center;
+}
 
 </style>
 </head>
 
-		<script>
+<%-- 		<script>
 			function goUserCreateAction(){
 			document.getElementById('form-action').action = 'UserCreateAction';
 			}
 			function goUserCreateCompleteAction(){
 			document.getElementById('form-action').action = 'UserCreateCompleteAction';
 			}
-		</script>
+		</script> --%>
 <body>
 
 <div><jsp:include page="header.jsp"/></div>
@@ -43,11 +64,16 @@
 <div class="main">
 <div class="inner">
 
-<div class="UCConfirm">
+
 <s:form id="form-action">
 
-			 <h2>新規ユーザー登録確認</h2>
+		<div class="UCConfirm-text">
+			 <h1>新規ユーザー登録確認</h1>
+			 <p>登録内容はこちらでよろしいですか？</p>
+		</div>
 
+
+<table>
  		<tr>
  			<th>ユーザーID</th>
  			<td><s:property value="userId" escape="false" /></td>
@@ -58,7 +84,7 @@
 			<td><s:property value="passCon" escape="false" /></td>
 		</tr>
 
- 		<tr>
+		<tr>
  			<th>確認用パスワード</th>
 			<td><s:property value="passCon" escape="false" /></td>
 		</tr>
@@ -104,18 +130,24 @@
 			<th>質問の答え</th>
 			<td><s:property value="secretAnswer" escape="false" /></td>
 		</tr>
-             <div class="UCConfirm-button">
+</table>
+<%--         <div class="button">
 				<s:submit value="訂正" onclick="goUserCreateAction();" />
 				<s:submit value="登録" onclick="goUserCreateCompleteAction();" />
-			</div>
+			</div> --%>
 
+			<!-- ボタン -->
+				<div class="button">
+					<input type="button" onclick="location.href='<s:url action="UserCreateAction" />'" value="訂正" />
+					<input type="button" onclick="location.href='<s:url action="UserCreateCompleteAction" />'" value="登録" />
+				</div>
 
 
 </s:form>
 
 </div>
 </div>
-</div>
+
 
 
 </body>

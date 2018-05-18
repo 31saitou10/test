@@ -20,14 +20,42 @@
 <style type="text/css">
 
 /*================LAYOUT==============*/
-.UC{
-	text-align: center ;
+body {
+	background-image: url(./images/board.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-size: 100% auto;
+}
+.inner{
+	margin:auto;
+	width:80%;
+	height:80%;
+/* 	影をつけるボックスのプロパティです */
+	border-left:1px solid black;
+	border-bottom:1px solid black;
+	border-radius:10px;
+	background-color:rgba(255,255,255,0.5);
+	box-shadow:-10px 10px 10px 5px rgba(0,0,0,0.4);
+}
+/* .UC{
 	border: 3px solid blue;
+} */
+.UC-text{
+	padding-left: 15%;
+}
+.UC-form{
+	padding-left: 25%;
+}
+.errorBox{
+ 	border:1px solid black;
+	width:300px;
+	height:50px;
+	overflow:scroll;
+}
+.button{
+	text-align:center;
 }
 
-/* .UC-error{
-	color: red;
-} */
 
 </style>
 
@@ -40,13 +68,17 @@
 		<div class="inner">
 			<div class="UC">
 
-				<h2>ユーザー登録</h2>
+			<div class="UC-text">
+				<h1>新規ユーザー登録</h1>
 				<p>情報を入力してください</p>
+			</div>
 
-				<s:form action="UserCreateConfirmAction">
+
+			<div class="UC-form">
+<%-- 				<s:form action="UserCreateConfirmAction"> --%>
 
 					<!-- ユーザーID -->
-
+				<table>
 					<tr>
 						<th>ユーザーID</th>
 						<td><input type="text" name="userId" placeholder=" 半角英数字 "
@@ -54,7 +86,9 @@
 							maxlength="8" />※8文字以内</td>
 						<td class="error">
 							<s:if test="errorId!=null">
-								<s:property value="errorId" />
+								<div class="errorBox">
+									<s:property value="errorId" />
+								</div>
 							</s:if>
 						</td>
 					</tr>
@@ -62,15 +96,15 @@
 
 					<!-- パスワード -->
 
-
-
 					<tr>
 						<th>パスワード</th>
 						<td><input type="password" name="password"
 							placeholder=" 半角英数字 " maxlength="16" />※16文字以内</td>
 						<td class="error">
 							<s:if test="errorPass!=null">
-								<s:property value="errorPass" />
+								<div class="errorBox">
+									<s:property value="errorPass" />
+								</div>
 							</s:if>
 						</td>
 					</tr>
@@ -80,10 +114,12 @@
 					<tr>
 						<th>パスワード確認用</th>
 						<td><input type="password" name="checkPassword"
-							placeholder=" 半角英数字 " maxlength="16" />※16文字以内</td>
+							placeholder=" 半角英数字 " maxlength="16" />※16文字以内
 						<td class="error">
 							<s:if test="errorCheck!=null">
-								<s:property value="errorCheck" />
+								<div class="errorBox">
+									<s:property value="errorCheck" />
+								</div>
 							</s:if>
 						</td>
 					</tr>
@@ -106,7 +142,9 @@
 						</td>
 						<td class="error">
 							<s:if test="errorName!=null">
-								<s:property value="errorName" />
+								<div class="errorBox">
+									<s:property value="errorName" />
+								</div>
 							</s:if>
 						</td>
 					</tr>
@@ -127,8 +165,11 @@
 							placeholder=" ひらがな"
 							<s:if test="errorNameKana.equals('')">value=<s:property value="#session.firstNameKana"/></s:if> />※16文字以内
 						</td>
-						<td class="error"><s:if test="errorNameKana!=null">
-								<s:property value="errorNameKana" />
+						<td class="error">
+							<s:if test="errorNameKana!=null">
+								<div class="errorBox">
+									<s:property value="errorNameKana" />
+								</div>
 							</s:if></td>
 					</tr>
 
@@ -162,7 +203,9 @@
 						</td>
 						<td class="error">
 							<s:if test="errorEmail!=null">
-								<s:property value="errorEmail" />
+								<div class="errorBox">
+									<s:property value="errorEmail" />
+								</div>
 							</s:if>
 						</td>
 					</tr>
@@ -194,7 +237,9 @@
 							</s:else></td>
 						<td class="error">
 							<s:if test="errorQuestion!=null">
-								<s:property value="errorQuestion" />
+								<div class="errorBox">
+									<s:property value="errorQuestion" />
+								</div>
 							</s:if>
 						</td>
 					</tr>
@@ -210,18 +255,27 @@
 						</td>
 						<td class="error">
 							<s:if test="errorAnswer!=null">
-								<s:property value="errorAnswer" />
+								<div class="errorBox">
+									<s:property value="errorAnswer" />
+								</div>
 							</s:if>
 						</td>
 					</tr>
+				</table>
 
-
+<%-- 				<div class="button">
 					<s:submit value="登録確認" />
+				</div> --%>
 
-				</s:form>
+				<div class="button">
+					<input type="button" onclick="location.href='<s:url action="UserCreateConfirmAction" />'" value="登録確認" />
+				</div>
+
+<%-- 				</s:form> --%>
 			</div>
 		</div>
 	</div>
+</div>
 
 </body>
 

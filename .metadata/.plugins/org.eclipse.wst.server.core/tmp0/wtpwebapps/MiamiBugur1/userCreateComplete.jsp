@@ -16,16 +16,34 @@
 <style type="text/css">
 
 /*================LAYOUT==============*/
-.UCComplete{
-	border: 3px solid blue;
+body {
+	background-image: url(./images/board.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-size: 100% auto;
 }
+.inner{
+	margin:auto;
+	width:80%;
+	height:80%;
+/* 	影をつけるボックスのプロパティです */
+	border-left:1px solid black;
+	border-bottom:1px solid black;
+	border-radius:10px;
+	background-color:rgba(255,255,255,0.5);
+	box-shadow:-10px 10px 10px 5px rgba(0,0,0,0.4);
+}
+/* .UCComplete{
+	border: 3px solid blue;
+} */
 .UCComplete-text{
 	padding-top: 15%;
-	padding-left: 30%;
+	text-align: center ;
 }
 .UCComplete-gohome{
 	padding-top: 10%;
-	padding-left: 40%;
+	padding-bottom:10%;
+	text-align: center ;
 }
 
 </style>

@@ -267,7 +267,9 @@ body {
 					<s:submit value="登録確認" />
 				</div>
 
-
+<!-- 				<div class="button"> -->
+<%-- 					<input type="button" onclick="location.href='<s:url action="UserCreateConfirmAction" />'" value="登録確認" /> --%>
+<!-- 				</div> -->
 
 				</s:form>
 			</div>

@@ -75,7 +75,7 @@ body {
 
 
 			<div class="UC-form">
-<%-- 				<s:form action="UserCreateConfirmAction"> --%>
+				<s:form action="UserCreateConfirmAction">
 
 					<!-- ユーザーID -->
 				<table>
@@ -263,15 +263,13 @@ body {
 					</tr>
 				</table>
 
-<%-- 				<div class="button">
-					<s:submit value="登録確認" />
-				</div> --%>
-
 				<div class="button">
-					<input type="button" onclick="location.href='<s:url action="UserCreateConfirmAction" />'" value="登録確認" />
+					<s:submit value="登録確認" />
 				</div>
 
-<%-- 				</s:form> --%>
+
+
+				</s:form>
 			</div>
 		</div>
 	</div>
